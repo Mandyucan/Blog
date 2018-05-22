@@ -14,14 +14,11 @@
 <meta name="author" content="Mandywu" />
 
 
-    
-    
-
 
 <meta name="description" content="mandy&apos;s personal website">
 <meta property="og:type" content="website">
 <meta property="og:title" content="mandy&#39;blog">
-<meta property="og:url" content="http://www.mandywu.xyz/index.html">
+<meta property="og:url" content="http://www.mandywu.xyz/tags/gitHub-blog/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
 <meta property="og:description" content="mandy&apos;s personal website">
 <meta property="og:locale" content="zh-Hans en">
@@ -55,13 +52,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>mandy&#39;blog</title>
+<title>Tag: gitHub - blog | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -70,10 +65,10 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
+        isHome: false,
         isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -274,238 +269,58 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-利用gitHub-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" class="article-date">
-      <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">2018-05-21</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" class="archive-article-date">
+      <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">05-21</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a>
+      <a class="archive-article-title" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>前期准备：</p>
-<ol>
-<li>有自己的github账号；</li>
-<li>配置环境：电脑已安装node ；</li>
-</ol>
-<p>hexo<br>Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具</p>
-<p>官网： <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a> </p>
-<p><strong>安装hexo</strong><br>第1步：<br>在自己认为合适的地方新建文件夹（一般为自己放code的文件），此文件夹是用于管理自己的博客文档，打开文件夹，单击右键，选择git bash,命令行中输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>备注：也可不用git bash, win+R 输入cmd打开命令行也OK</p>
-<p>第2步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>第3步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog(cd你的文件夹位置 //比如cd [blog] 我的文件夹名字就叫:[blog])</span><br></pre></td></tr></table></figure>
-<p>第4步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>第5步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server  开启本地服务器，默认会在http://localhost:4000/打开</span><br></pre></td></tr></table></figure>
-<p>打开此链接，会出现如下图所示内容：<br><img src="https://img-blog.csdn.net/20180521135331689?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01hbmR5dWNhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p><strong>将hexo与本人github联系起来：</strong><br>具体可参考hexo官网：<br>hexo官网 –&gt;Docs–&gt;  Deployment –&gt;Git</p>
-<p>接着上述步骤<br>第6步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl C 关闭本地服务器</span><br></pre></td></tr></table></figure>
-<p>第7步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>第8步：<br>在新建文件夹中的blog里config.yml里配置deploy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">depploy:</span><br><span class="line">	type:git</span><br><span class="line">	repo:&lt;repositpry url&gt; //github上博客地址，新建repository课命名为blog，复制blog链接到此处</span><br><span class="line">	branch：master</span><br><span class="line">	message：[message] //删除不写</span><br></pre></td></tr></table></figure>
-<p>注意：config.yml中root的配置（会影响博客只显示文字 不呈现样式）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root：blog // 但如果是解析到自己的域名下了，则url和root都默认不写</span><br></pre></td></tr></table></figure>
-<p>第9步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g  //生成本地发布文件夹</span><br><span class="line">hexo d  //部署到github上</span><br><span class="line">//也可合并写成一个步骤：hexo d -g</span><br></pre></td></tr></table></figure>
-<p><strong>怎样编辑文档发布自己的博客呢</strong></p>
-<p>新建一篇博客，执行下面命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;article title&apos;</span><br></pre></td></tr></table></figure>
-<p>这时候在最初新建文件夹的\source\ _posts 将会看到 article title.md 文件</p>
-<p>用编辑器打开就可以编辑文章了。文章编辑好之后，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g //在部署前先生成</span><br></pre></td></tr></table></figure>
-<p>注意：</p>
-<ol>
-<li>若提示报错<code>deloyer not found:git</code></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Hexo简易教程/">Hexo简易教程</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2018/05/18/hello-world/" class="article-date">
-      <time datetime="2018-05-18T06:15:00.000Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
-
-    </div>
+    </div></section>
   
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/hello-world/">Hello World</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><excerpt in="" index="" |="" 首页摘要=""><br>+
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2018/05/18/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-article-title" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/18/article-title/" class="article-date">
-      <time datetime="2018-05-18T04:16:23.000Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/article-title/">article title</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="Some-HTML"><a href="#Some-HTML" class="headerlink" title="Some HTML"></a>Some HTML</h3><p>Hello world! 本网站是一个在线的工具集合，域名为org域名，翻译为“一个工具”（a tool）.</p>
-<p>aTool主要包含有以下的功能：</p>
-<hr>
-<ol>
-<li>在线多媒体处理工具</li>
-<li>在线站长工具</li>
-<li>在线代码转换工具</li>
-<li>在线便民工具</li>
-<li>在线小游戏</li>
-</ol>
-<hr>
-<p>更多工具，To be continue…</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
     <div class="outer">
