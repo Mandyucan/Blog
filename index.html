@@ -281,6 +281,15 @@
       <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">2018-05-21</time>
 </a>
 
+ 
+    <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/05/21/利用gitHub-Hexo搭建个人博客/"></span>
+        
+    </a>
 
     </div>
   
@@ -351,6 +360,15 @@ hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布
       <time datetime="2018-05-18T06:15:00.000Z" itemprop="datePublished">2018-05-18</time>
 </a>
 
+ 
+    <a href="/2018/05/18/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/05/18/hello-world/"></span>
+        
+    </a>
 
     </div>
   
@@ -373,7 +391,9 @@ hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><excerpt in="" index="" |="" 首页摘要=""><br>+
+              <excerpt in="" index="" |="" 首页摘要=""> 
+
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
           
       
     </div>
@@ -411,6 +431,15 @@ hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布
       <time datetime="2018-05-18T04:16:23.000Z" itemprop="datePublished">2018-05-18</time>
 </a>
 
+ 
+    <a href="/2018/05/18/article-title/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/05/18/article-title/"></span>
+        
+    </a>
 
     </div>
   
@@ -525,6 +554,26 @@ hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布
         })
     </script>
 
+
+    
+
+    
+        <script id="dsq-count-scr" src="//.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
 
