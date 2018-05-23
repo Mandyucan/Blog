@@ -15,16 +15,20 @@
 
 
 
-<meta name="description" content="mandy&apos;s personal website">
-<meta property="og:type" content="website">
-<meta property="og:title" content="mandy&#39;blog">
-<meta property="og:url" content="http://www.mandywu.xyz/archives/2018/05/index.html">
+<meta name="description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
+<meta name="keywords" content="npm yarn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用yarn代替npm作为node.js的模块管理器">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="mandy&apos;s personal website">
+<meta property="og:description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
 <meta property="og:locale" content="zh-Hans en">
+<meta property="og:image" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png">
+<meta property="og:updated_time" content="2018-05-23T11:45:46.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mandy&#39;blog">
-<meta name="twitter:description" content="mandy&apos;s personal website">
+<meta name="twitter:title" content="用yarn代替npm作为node.js的模块管理器">
+<meta name="twitter:description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
+<meta name="twitter:image" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2018/5 | mandy&#39;blog</title>
+<title>用yarn代替npm作为node.js的模块管理器 | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +70,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -265,262 +269,218 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-用yarn代替npm作为node.js的模块管理器" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" class="article-date">
+      <time datetime="2018-05-23T04:08:34.000Z" itemprop="datePublished">2018-05-23</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用yarn代替npm作为node.js的模块管理器
+    </h1>
+  
+
+      </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/23/Hexo快速发布博文及插入图片/" class="archive-article-date">
-      <time datetime="2018-05-23T08:00:00.000Z" itemprop="datePublished">05-23</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/23/Markdown常用语法/" class="archive-article-date">
-      <time datetime="2018-05-23T04:08:34.000Z" itemprop="datePublished">05-23</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Markdown常用语法/">Markdown 常用语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" class="archive-article-date">
-      <time datetime="2018-05-23T04:08:34.000Z" itemprop="datePublished">05-23</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/npm-yarn/">npm/yarn</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm-yarn/">npm yarn</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/23/Markdown-简要语法/" class="archive-article-date">
-      <time datetime="2018-05-23T04:08:34.000Z" itemprop="datePublished">05-23</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/23/Markdown-简要语法/">Markdown 常用语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p>npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！</p>
+<blockquote>
+<p>Yarn是Facebook公司出品的用于管理node.js包的一款软件,npm安装速度比较慢，而且当项目中模块数量越来越多时，管理这些模块及其依赖的版本会很麻烦，npm在模块安装的过程中可以执行程序，安全性不高。</p>
+<p>yarn的存在正好解决了这些问题，模块安装速度快，当某些模块通过yarn安装过后，再次安装甚至不需要连接网络；yarn也可以很好的控制模块依赖的版本（通过yarn.lock文件锁住），而且安全可靠。</p>
+</blockquote>
+<p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">yarn官网</a></p>
+<h3 id="yarn-安装"><a href="#yarn-安装" class="headerlink" title="yarn 安装"></a>yarn 安装</h3><p>1、可直接通过npm工具全局安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure></p>
+<p>2、参考官网各平台安装方式<a href="https://yarnpkg.com/zh-Hans/docs/install#windows-stable" target="_blank" rel="noopener">官网各平台安装方式</a></p>
+<p>安装完成后，可输入<code>yarn -V</code>，正确显示版本号说明安装成功;<code>yarn -h</code>可查看帮助信息</p>
+<h3 id="yarn-使用"><a href="#yarn-使用" class="headerlink" title="yarn 使用"></a>yarn 使用</h3><p><img src="/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png" alt="这里写图片描述"></p>
+<p><a href="https://yarnpkg.com/zh-Hans/docs" target="_blank" rel="noopener">更多请参考官网</a></p>
+<p>yarn也可采用淘宝镜像，输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h3 id="Some-tips"><a href="#Some-tips" class="headerlink" title="Some tips"></a>Some tips</h3><ul>
+<li><p>package.json里面有写依赖的话，用yarn install就行</p>
+</li>
+<li><p>没有写依赖，自己安装: yarn add xxxx；如果是开发依赖后面加上 –dev</p>
+</li>
+<li><p>看你用什么安装，如果是yarn，yarn install默认是安装生成环境下的依赖；yarn install –dev安装开发环境下的依赖；<br>如果是npm，<br>npm install –save 安装生产依赖；<br>npm install –save-dev 开发环境依赖</p>
+</li>
+</ul>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+      
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" class="archive-article-date">
-      <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">05-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
+        <p><span>发布时间:</span>2018-05-23, 12:08:34</p>
+        <p><span>最后更新:</span>2018-05-23, 19:45:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" title="用yarn代替npm作为node.js的模块管理器">http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/05/23/Markdown常用语法/">
+                    Markdown 常用语法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/05/23/Markdown-简要语法/">
+                    Markdown 常用语法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn-安装"><span class="toc-number">1.</span> <span class="toc-text">yarn 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn-使用"><span class="toc-number">2.</span> <span class="toc-text">yarn 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Some-tips"><span class="toc-number">3.</span> <span class="toc-text">Some tips</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"用yarn代替npm作为node.js的模块管理器　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/';
+            this.page.identifier = '2018/05/23/用yarn代替npm作为node.js的模块管理器/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/05/23/Markdown常用语法/" title="上一篇: Markdown 常用语法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/05/23/Markdown-简要语法/" title="下一篇: Markdown 常用语法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/18/hello-world/" class="archive-article-date">
-      <time datetime="2018-05-18T06:15:00.000Z" itemprop="datePublished">05-18</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown常用语法/">Markdown 常用语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 常用语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/18/article-title/" class="archive-article-date">
-      <time datetime="2018-05-18T04:16:23.000Z" itemprop="datePublished">05-18</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/article-title/">article title</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
