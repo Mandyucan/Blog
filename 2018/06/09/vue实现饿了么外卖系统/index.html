@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
+<meta name="description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
 <meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue实现饿了么外卖系统">
 <meta property="og:url" content="http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
+<meta property="og:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-09T15:43:40.443Z">
+<meta property="og:updated_time" content="2018-06-09T15:48:13.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue实现饿了么外卖系统">
-<meta name="twitter:description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
+<meta name="twitter:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -309,8 +309,8 @@
           
         <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>1.掌握vue.js项目在实战中的用<br>2.学会使用vue.js<br>3.组件化、模块化的开发方式</p>
 <h2 id="涉及知识内容"><a href="#涉及知识内容" class="headerlink" title="涉及知识内容"></a>涉及知识内容</h2><p>1.vue-cli<br>2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios<br>3.webpack构建工具<br>4.mock.ls模拟数据<br>5.es6 eslint代码风格工具（看个人需求，也可以用es5写）</p>
-<h2 id="学到什么"><a href="#学到什么" class="headerlink" title="学到什么"></a>学到什么</h2><p>1.标准开发流程，做事的方式</p>
-<ol start="2">
+<h2 id="学到什么"><a href="#学到什么" class="headerlink" title="学到什么"></a>学到什么</h2><ol>
+<li>标准开发流程，做事的方式</li>
 <li>工程化、组件化、模块化的思想</li>
 <li>移动端开发常用小技巧</li>
 <li>flex弹性布局</li>
@@ -328,8 +328,7 @@
 </blockquote>
 <h2 id="vue核心思想"><a href="#vue核心思想" class="headerlink" title="vue核心思想"></a>vue核心思想</h2><p>1.数据驱动： 写vue时，一定不要有操作dom的代码出现，dom的渲染、显示、隐藏，均由数据的状态控制；<br>2.组件化：扩展html元素，封装可重复用的一个代码，和之前写的弹窗组件。翻页组件等类似</p>
 <h2 id="如何在公司中能够开发一个项目"><a href="#如何在公司中能够开发一个项目" class="headerlink" title="如何在公司中能够开发一个项目"></a>如何在公司中能够开发一个项目</h2><ul>
-<li><strong>产品给出需求文档，产品原型</strong></li>
-<li>阅读文档，梳理需求</li>
+<li><strong>产品给出需求文档，产品原型</strong><br>阅读文档，梳理需求</li>
 </ul>
 
       
@@ -342,7 +341,7 @@
         <p><span>本文标题:</span><a href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
         <p><span>发布时间:</span>2018-06-09, 23:43:00</p>
-        <p><span>最后更新:</span>2018-06-09, 23:43:40</p>
+        <p><span>最后更新:</span>2018-06-09, 23:48:13</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/09/vue实现饿了么外卖系统/" title="vue实现饿了么外卖系统">http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
