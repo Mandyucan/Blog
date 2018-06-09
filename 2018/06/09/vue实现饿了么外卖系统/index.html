@@ -15,22 +15,18 @@
 
 
 
-<meta name="description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
-<meta name="keywords" content="CSS">
+<meta name="description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css样式表里面引用background-image时，url路径错误原因及解决方法">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/index.html">
+<meta property="og:title" content="vue实现饿了么外卖系统">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
+<meta property="og:description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/2.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/3.png">
-<meta property="og:updated_time" content="2018-06-04T07:50:10.830Z">
+<meta property="og:updated_time" content="2018-06-09T15:43:40.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css样式表里面引用background-image时，url路径错误原因及解决方法">
-<meta name="twitter:description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png">
+<meta name="twitter:title" content="vue实现饿了么外卖系统">
+<meta name="twitter:description" content="## 目标 ## 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 ## 涉及知识内容 ## 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>css样式表里面引用background-image时，url路径错误原因及解决方法 | mandy&#39;blog</title>
+<title>vue实现饿了么外卖系统 | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css样式表里面引用background-image时，url路径错误原因及解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-vue实现饿了么外卖系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" class="article-date">
-      <time datetime="2018-06-04T07:47:00.000Z" itemprop="datePublished">2018-06-04</time>
+      <a href="/2018/06/09/vue实现饿了么外卖系统/" class="article-date">
+      <time datetime="2018-06-09T15:43:00.000Z" itemprop="datePublished">2018-06-09</time>
 </a>
 
 
@@ -290,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css样式表里面引用background-image时，url路径错误原因及解决方法
+      vue实现饿了么外卖系统
     </h1>
   
 
@@ -301,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -311,15 +307,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：<br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png" alt="这里写图片描述"><br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/2.png" alt="这里写图片描述"><br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/3.png" alt="这里写图片描述"></p>
-<p>css样式表中background-image要引入image文件夹下的<code>portrait.jpg</code>图片，</p>
-<p>正确的写法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(&apos;../image/portrait.jpg&apos;);</span><br></pre></td></tr></table></figure>
-<h2 id="误区："><a href="#误区：" class="headerlink" title="误区："></a>误区：</h2><p>一直以为，当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题，如果是相对地址，那么，<strong>一定要相对css/style.css所在的路径，而不必考虑即将引用它的html文件的路径。</strong></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.相对路径（相对于html）<br>在html的头部写样式，就可以相对于html文件的图片的路径了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        </span><br><span class="line">    .portrait &#123;</span><br><span class="line">        background-image: url(&apos;./static/image/portrait.jpg&apos;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-<p>2.相对路径（外部引入css样式表，相对于style.css引入）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(&apos;../image/portrait.jpg&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>3.绝对路径（比如<code>f:/resume/static/image/portrait.jpg</code>(这种方式理论上是可以的，但一般不采用）</p>
+        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>1.掌握vue.js项目在实战中的用<br>2.学会使用vue.js<br>3.组件化、模块化的开发方式</p>
+<h2 id="涉及知识内容"><a href="#涉及知识内容" class="headerlink" title="涉及知识内容"></a>涉及知识内容</h2><p>1.vue-cli<br>2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios<br>3.webpack构建工具<br>4.mock.ls模拟数据<br>5.es6 eslint代码风格工具（看个人需求，也可以用es5写）</p>
+<h2 id="学到什么"><a href="#学到什么" class="headerlink" title="学到什么"></a>学到什么</h2><p>1.标准开发流程，做事的方式</p>
+<ol start="2">
+<li>工程化、组件化、模块化的思想</li>
+<li>移动端开发常用小技巧</li>
+<li>flex弹性布局</li>
+<li>交互设计</li>
+</ol>
+<h2 id="如何做技术选型"><a href="#如何做技术选型" class="headerlink" title="如何做技术选型"></a>如何做技术选型</h2><p><strong>多方面因素：</strong><br>一、技术方面：</p>
+<p>1.社区（是否成熟/活跃）、有问题可以找到解决方案;<br>2.开源框架的其他方面（文档更新是及时、框架轻量级）</p>
+<p>二、人才方面：</p>
+<ol>
+<li>对于新技术，开发人员上手成本<br> <strong>vue</strong>: 上手成本低，语法清晰，template模板，借鉴react虚拟dom思想、angular设计模式，数据绑定，且对细腻dom进行了优化<br> <strong>react</strong>：有自己及独特的语法==》jss语法，将html、css都写到js里面，学习成本相对较大<br> <strong>angular</strong>：后端人员写出的，借鉴后端的思想。需要懂后台语言。</li>
+</ol>
+<p>2.团队技术积累：<br>    如果团队其他人员都在用传统的开发工具,,你却用新框架，出现问题后没有其他人不能一起解决，新技术可以用，但是不能耽误最后发版影响进度。</p>
+<blockquote>
+<p>对于公司来说，上线的项目使用的技术不一定要最新最潮，但一定是最稳当的</p>
+</blockquote>
+<h2 id="vue核心思想"><a href="#vue核心思想" class="headerlink" title="vue核心思想"></a>vue核心思想</h2><p>1.数据驱动： 写vue时，一定不要有操作dom的代码出现，dom的渲染、显示、隐藏，均由数据的状态控制；<br>2.组件化：扩展html元素，封装可重复用的一个代码，和之前写的弹窗组件。翻页组件等类似</p>
+<h2 id="如何在公司中能够开发一个项目"><a href="#如何在公司中能够开发一个项目" class="headerlink" title="如何在公司中能够开发一个项目"></a>如何在公司中能够开发一个项目</h2><ul>
+<li><strong>产品给出需求文档，产品原型</strong></li>
+<li>阅读文档，梳理需求</li>
+</ul>
 
       
     </div>
@@ -328,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></p>
+        <p><span>本文标题:</span><a href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-04, 15:47:00</p>
-        <p><span>最后更新:</span>2018-06-04, 15:50:10</p>
+        <p><span>发布时间:</span>2018-06-09, 23:43:00</p>
+        <p><span>最后更新:</span>2018-06-09, 23:43:40</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="css样式表里面引用background-image时，url路径错误原因及解决方法">http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/09/vue实现饿了么外卖系统/" title="vue实现饿了么外卖系统">http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -346,16 +357,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/09/vue实现饿了么外卖系统/">
-                    vue实现饿了么外卖系统
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">
-                    git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）
+                <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">
+                    css样式表里面引用background-image时，url路径错误原因及解决方法
                 </a>
             </div>
         
@@ -367,7 +372,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#误区："><span class="toc-number">1.</span> <span class="toc-text">误区：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">2.</span> <span class="toc-text">解决方法</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识内容"><span class="toc-number">2.</span> <span class="toc-text">涉及知识内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学到什么"><span class="toc-number">3.</span> <span class="toc-text">学到什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何做技术选型"><span class="toc-number">4.</span> <span class="toc-text">如何做技术选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue核心思想"><span class="toc-number">5.</span> <span class="toc-text">vue核心思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在公司中能够开发一个项目"><span class="toc-number">6.</span> <span class="toc-text">如何在公司中能够开发一个项目</span></a></li></ol>
         
     </div>
     <style>
@@ -403,7 +408,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"css样式表里面引用background-image时，url路径错误原因及解决方法　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"vue实现饿了么外卖系统　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,8 +427,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/';
-            this.page.identifier = '2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/';
+            this.page.url = 'http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/';
+            this.page.identifier = '2018/06/09/vue实现饿了么外卖系统/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -445,15 +450,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/09/vue实现饿了么外卖系统/" title="上一篇: vue实现饿了么外卖系统">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/" title="下一篇: git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">
+            <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="下一篇: css样式表里面引用background-image时，url路径错误原因及解决方法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
