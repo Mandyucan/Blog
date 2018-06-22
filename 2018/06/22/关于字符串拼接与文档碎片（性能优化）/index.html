@@ -15,22 +15,18 @@
 
 
 
-<meta name="description" content="如何使用git在本地创建一个项目以及常见问题解决。一、对于新建repository：1. 本地项目文件夹  git bash here； 2. `git init`  并复制项目代码到本地仓库； 3. `git add .` 4. `git commit -m“first”` 5. 连接代码至GitHub：在GitHub新建repository，复制地址...">
-<meta name="keywords" content="gitHub">
+<meta name="description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
+<meta name="keywords" content="性能优化 javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/index.html">
+<meta property="og:title" content="关于字符串拼接与文档碎片（性能优化）">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="如何使用git在本地创建一个项目以及常见问题解决。一、对于新建repository：1. 本地项目文件夹  git bash here； 2. `git init`  并复制项目代码到本地仓库； 3. `git add .` 4. `git commit -m“first”` 5. 连接代码至GitHub：在GitHub新建repository，复制地址...">
+<meta property="og:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub%20及常见问题解决（更新）/git1.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub%20及常见问题解决（更新）/git2.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub%20及常见问题解决（更新）/git3.png">
-<meta property="og:updated_time" content="2018-06-09T15:53:58.080Z">
+<meta property="og:updated_time" content="2018-06-22T15:24:42.533Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">
-<meta name="twitter:description" content="如何使用git在本地创建一个项目以及常见问题解决。一、对于新建repository：1. 本地项目文件夹  git bash here； 2. `git init`  并复制项目代码到本地仓库； 3. `git add .` 4. `git commit -m“first”` 5. 连接代码至GitHub：在GitHub新建repository，复制地址...">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub%20及常见问题解决（更新）/git1.png">
+<meta name="twitter:title" content="关于字符串拼接与文档碎片（性能优化）">
+<meta name="twitter:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>git建立本地仓库并上传代码到gitHub 及常见问题解决（更新） | mandy&#39;blog</title>
+<title>关于字符串拼接与文档碎片（性能优化） | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-关于字符串拼接与文档碎片（性能优化）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/" class="article-date">
-      <time datetime="2018-05-29T15:55:00.000Z" itemprop="datePublished">2018-05-29</time>
+      <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" class="article-date">
+      <time datetime="2018-06-22T15:23:00.000Z" itemprop="datePublished">2018-06-22</time>
 </a>
 
 
@@ -290,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）
+      关于字符串拼接与文档碎片（性能优化）
     </h1>
   
 
@@ -301,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub/">gitHub</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化-javascript/">性能优化 javascript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -311,48 +307,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>一、对于新建repository：</strong></p>
-<ol>
-<li>本地项目文件夹  git bash here；</li>
-<li><code>git init</code>  并复制项目代码到本地仓库；</li>
-<li><code>git add .</code></li>
-<li><code>git commit -m“first”</code></li>
-<li>连接代码至GitHub：在GitHub新建repository，复制地址，</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 上述复制的地址</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>将本地项目更新到github项目上去 <code>git push -u origin master</code></li>
-</ol>
-<p><strong>注意：</strong></p>
-<ul>
-<li>若文件有修改，命令行中先 <code>git fetch origin master</code> ，再git push  origin master；</li>
-<li>如果有README.md文件，因此文件没有下载下来，需要先在命令行  <code>git pull -- rebase origin master</code>， 再执行<code>git push -u  origin master</code></li>
-</ul>
-<p><strong>二、本地仓库修改同步到远程仓库：</strong></p>
-<ol>
-<li><p><code>git add --all</code></p>
-</li>
-<li><p><code>git commit -m &#39;second&#39;</code></p>
-</li>
-<li><p><code>git pull origin master</code></p>
-</li>
-<li><p><code>git push origin master</code></p>
-</li>
-</ol>
-<p><strong>三、常见问题解决</strong><br>1.git使用报错: <code>fatal: Couldn&#39;t find remote ref master</code><br>解决方法：</p>
-<p> a. 先删除远程 Git 仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-<p>b. 再添加远程 Git 仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 远程仓库地址</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/git1.png" alt="这里写图片描述"><br>如果执行 git remote rm origin 报错的话，可以手动修改gitconfig文件的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi .git/config</span><br></pre></td></tr></table></figure>
-<p>把 [remote “origin”] 那一行删掉就好<br><img src="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/git2.png" alt="这里写图片描述"></p>
-<p>2.github推送项目常见错误<code>fatal: remote origin already exists.</code></p>
-<p>解决方法：<br><img src="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/git3.png" alt="这里写图片描述"></p>
-<p>3.如果输入<code>git push origin master</code><br> 提示出错信息：<code>error:failed to push som refs to</code> …….<br> 解决办法如下：<br> 1、先输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master //先把远程服务器github上面的文件拉下来</span><br></pre></td></tr></table></figure></p>
-<p>2.再输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<p>3.如果出现报错 <code>fatal: Couldn&#39;t find remote ref master</code>或者<code>fatal: &#39;origin&#39; does not appear to be a git repository</code>以及<code>fatal: Could not read from remote repository.</code><br>    则需要重新输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 仓库地址</span><br></pre></td></tr></table></figure></p>
+        <h2 id="想在div里面往span后面追加这个ul"><a href="#想在div里面往span后面追加这个ul" class="headerlink" title="想在div里面往span后面追加这个ul"></a>想在div里面往span后面追加这个ul</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;haha&quot;&gt;</span><br><span class="line">        &lt;span&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = function () &#123;</span><br><span class="line">            var s = &apos;&lt;ul&gt;&lt;li&gt;a&lt;/li&gt;&lt;li&gt;b&lt;/li&gt;&lt;/ul?&apos;;</span><br><span class="line">            var ha = document.getElementById(&apos;haha&apos;);</span><br><span class="line">            ha.innerHTML += s;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>可以使用innerHTML += 字符串的方式<br>如果innerHTML = 字符串了，那就覆盖了，+=就可以继续往后追加；</p>
+<p><strong>但是在实际的生产中一般不这么写，以下是实际中常用的写法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;haha&quot;&gt;</span><br><span class="line">        &lt;span&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = function () &#123;</span><br><span class="line">            var s = document.createElement(&apos;ul&apos;);</span><br><span class="line">            for (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">                var temp = document.createElement(&apos;li&apos;);</span><br><span class="line">                temp.innerHTML = &apos;a&apos;;</span><br><span class="line">                s.appendChild(temp);</span><br><span class="line">            &#125;</span><br><span class="line">            var ha = document.getElementById(&apos;haha&apos;);</span><br><span class="line">            ha.appendChild(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong>：</p>
+<blockquote>
+<p><strong>createElement和nnerHTML的区别：</strong></p>
+</blockquote>
+<p>在实际中我们一般使用<code>createElement</code>的方式，因为<code>createElement</code>的方式是直接操作dom树，而i<code>nnerHTML</code>是需要解析字符串的，其间有一个解析的过程；</p>
+<p>性能上，<code>createElement</code>和<code>innerHTML</code>在很多浏览器中是有差别的；</p>
+<p>如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了；</p>
+<p>chrome有着非常优秀的js引擎，所以性能比较好，在<code>createElement</code>和<code>innerHTML</code>的方面的差距稍小一些；但是放到火狐或者ie之类的浏览器上，差距就会大一些。</p>
+<p>在插入内容少的时候，实际上现代浏览器innertHTML速度要快一些，但是由于都很快，所以这点微弱的差距就可以忽略不计了；</p>
+<p><strong>而且<code>innerHTML</code>和<code>createElement</code>还有一个区别</strong></p>
+<p>innerHTML里面要是带有script脚本的话，这个脚本是不执行的，但是createElement会执行。</p>
+<h2 id="文档碎片（性能优化）"><a href="#文档碎片（性能优化）" class="headerlink" title="文档碎片（性能优化）"></a>文档碎片（性能优化）</h2><p>按照以上第二种方式，可以接受，但是要向document中添加大量数据时(比如1w条)，如果像以下的代码一样，逐条添加节点，这个过程就可能会十分缓慢。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//反例</span><br><span class="line">for(var i=0;i&lt;5;i++)&#123; </span><br><span class="line">   var op = document.createElement(&quot;span&quot;); </span><br><span class="line"></span><br><span class="line">   var oText = document.createTextNode(i); </span><br><span class="line"></span><br><span class="line">   op.appendChild(oText); </span><br><span class="line"></span><br><span class="line">   document.body.appendChild(op); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当数据过大（10000条）时，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//反例 （数据过大时）</span><br><span class="line">var oDiv = document.createElement(&quot;div&quot;); </span><br><span class="line">for(var i=0;i&lt;10000;i++)&#123; </span><br><span class="line">    var op = document.createElement(&quot;span&quot;); </span><br><span class="line">    var oText = document.createTextNode(i); </span><br><span class="line">    op.appendChild(oText); </span><br><span class="line">    oDiv.appendChild(op);  </span><br><span class="line">&#125; </span><br><span class="line">document.body.appendChild(oDiv);</span><br></pre></td></tr></table></figure>
+<h2 id="解决问题，文档碎片createDocumentFragment"><a href="#解决问题，文档碎片createDocumentFragment" class="headerlink" title="解决问题，文档碎片createDocumentFragment()"></a>解决问题，文档碎片createDocumentFragment()</h2><p>为了解决这个问题，我们可以引入createDocumentFragment()方法，它的作用是创建一个文档碎片，把要插入的新节点先附加在它上面，然后再一次性添加到document中。代码如下：<br>代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//先创建文档碎片</span><br><span class="line"></span><br><span class="line">var oFragmeng = document.createDocumentFragment(); </span><br><span class="line"></span><br><span class="line">for(var i=0;i&lt;10000;i++)&#123; </span><br><span class="line"></span><br><span class="line">    var op = document.createElement(&quot;span&quot;); </span><br><span class="line"></span><br><span class="line">    var oText = document.createTextNode(i); </span><br><span class="line"></span><br><span class="line">    op.appendChild(oText); </span><br><span class="line">	</span><br><span class="line">	//先附加在文档碎片中</span><br><span class="line">    oFragmeng.appendChild(op);  </span><br><span class="line">&#125; </span><br><span class="line">//最后一次性添加到document中</span><br><span class="line"></span><br><span class="line">document.body.appendChild(oFragmeng);</span><br></pre></td></tr></table></figure>
+<p>ps: 在ie，firefox下性能明显得以提高,这个优化跟循环添加html代码类似.</p>
 
       
     </div>
@@ -361,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></p>
+        <p><span>本文标题:</span><a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-05-29, 23:55:00</p>
-        <p><span>最后更新:</span>2018-06-09, 23:53:58</p>
+        <p><span>发布时间:</span>2018-06-22, 23:23:00</p>
+        <p><span>最后更新:</span>2018-06-22, 23:24:42</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/" title="git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" title="关于字符串拼接与文档碎片（性能优化）">http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -379,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">
-                    css样式表里面引用background-image时，url路径错误原因及解决方法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">
-                    用yarn代替npm作为node.js的模块管理器
+                <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">
+                    eleme项目框架搭建及eslint语法常见报错
                 </a>
             </div>
         
@@ -400,7 +370,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#想在div里面往span后面追加这个ul"><span class="toc-number">1.</span> <span class="toc-text">想在div里面往span后面追加这个ul</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档碎片（性能优化）"><span class="toc-number">2.</span> <span class="toc-text">文档碎片（性能优化）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决问题，文档碎片createDocumentFragment"><span class="toc-number">3.</span> <span class="toc-text">解决问题，文档碎片createDocumentFragment()</span></a></li></ol>
         
     </div>
     <style>
@@ -436,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"关于字符串拼接与文档碎片（性能优化）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -455,8 +425,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/';
-            this.page.identifier = '2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/';
+            this.page.url = 'http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/';
+            this.page.identifier = '2018/06/22/关于字符串拼接与文档碎片（性能优化）/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -478,15 +448,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="上一篇: css样式表里面引用background-image时，url路径错误原因及解决方法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" title="下一篇: 用yarn代替npm作为node.js的模块管理器">
+            <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/" title="下一篇: eleme项目框架搭建及eslint语法常见报错">
                 <i class="fa fa-angle-right"></i>
             </a>
         

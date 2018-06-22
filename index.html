@@ -195,7 +195,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化-javascript/">性能优化 javascript</a></li></ul>
                     </div>
                 </section>
                 
@@ -271,6 +271,79 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-关于字符串拼接与文档碎片（性能优化）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" class="article-date">
+      <time datetime="2018-06-22T15:23:00.000Z" itemprop="datePublished">2018-06-22</time>
+</a>
+
+ 
+    <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/06/22/关于字符串拼接与文档碎片（性能优化）/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化-javascript/">性能优化 javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-eleme项目框架搭建及eslint语法常见报错" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -942,82 +1015,10 @@ hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布
 
 
   
-    <article id="post-article-title" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2018/05/18/article-title/" class="article-date">
-      <time datetime="2018-05-18T04:16:23.000Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
- 
-    <a href="/2018/05/18/article-title/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2018/05/18/article-title/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/article-title/">article title</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="Some-HTML"><a href="#Some-HTML" class="headerlink" title="Some HTML"></a>Some HTML</h3><p>Hello world! 本网站是一个在线的工具集合，域名为org域名，翻译为“一个工具”（a tool）.</p>
-<p>aTool主要包含有以下的功能：</p>
-<hr>
-<ol>
-<li>在线多媒体处理工具</li>
-<li>在线站长工具</li>
-<li>在线代码转换工具</li>
-<li>在线便民工具</li>
-<li>在线小游戏</li>
-</ol>
-<hr>
-<p>更多工具，To be continue…</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
