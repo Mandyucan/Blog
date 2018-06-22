@@ -15,25 +15,18 @@
 
 
 
-<meta name="description" content="vue报错：`eslint-disable-next-line to ignore the next line.` Use // eslint-disable-next-line to ignore the next line. Use /* eslint-disable */ to ignore all warnings in a file. 错误解析：执行npm run dev时报错以上信息，">
-<meta name="keywords" content="vue">
+<meta name="description" content="gulp自动化构建工具配置...">
+<meta name="keywords" content="gulp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="eleme项目框架搭建及eslint语法常见报错">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/index.html">
+<meta property="og:title" content="gulp配置">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/06/23/gulp配置/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="vue报错：`eslint-disable-next-line to ignore the next line.` Use // eslint-disable-next-line to ignore the next line. Use /* eslint-disable */ to ignore all warnings in a file. 错误解析：执行npm run dev时报错以上信息，">
+<meta property="og:description" content="gulp自动化构建工具配置...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/eleme1.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/eleme2.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体1.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体2.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体3.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体4.png">
-<meta property="og:updated_time" content="2018-06-11T15:07:09.241Z">
+<meta property="og:updated_time" content="2018-06-22T17:36:54.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="eleme项目框架搭建及eslint语法常见报错">
-<meta name="twitter:description" content="vue报错：`eslint-disable-next-line to ignore the next line.` Use // eslint-disable-next-line to ignore the next line. Use /* eslint-disable */ to ignore all warnings in a file. 错误解析：执行npm run dev时报错以上信息，">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/eleme1.png">
+<meta name="twitter:title" content="gulp配置">
+<meta name="twitter:description" content="gulp自动化构建工具配置...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>eleme项目框架搭建及eslint语法常见报错 | mandy&#39;blog</title>
+<title>gulp配置 | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -274,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-eleme项目框架搭建及eslint语法常见报错" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-gulp配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/" class="article-date">
-      <time datetime="2018-06-11T14:56:00.000Z" itemprop="datePublished">2018-06-11</time>
+      <a href="/2018/06/23/gulp配置/" class="article-date">
+      <time datetime="2018-06-22T17:35:00.000Z" itemprop="datePublished">2018-06-23</time>
 </a>
 
 
@@ -293,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      eleme项目框架搭建及eslint语法常见报错
+      gulp配置
     </h1>
   
 
@@ -301,10 +294,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/gulp/">gulp</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -314,34 +311,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="全局安装vue-cli"><a href="#全局安装vue-cli" class="headerlink" title="全局安装vue-cli"></a>全局安装vue-cli</h2><p> 全局安装vue-cli<br>    打开终端，<code>npm install vue-cli -g</code></p>
-<h2 id="安装webpack模板"><a href="#安装webpack模板" class="headerlink" title="安装webpack模板"></a>安装webpack模板</h2><p>1.项目文件夹下，<code>npm init webpack eleme</code> (eleme是项目名)<br>2.按照提示选择，<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/eleme1.png" alt="这里写图片描述"></p>
-<p>会提示选择用npm还是yarn，我选择的yarn.<br>3.按照提示继续输入命令即可<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/eleme2.png" alt="这里写图片描述"></p>
-<h2 id="安装mockjs模拟数据"><a href="#安装mockjs模拟数据" class="headerlink" title="安装mockjs模拟数据"></a>安装mockjs模拟数据</h2><p><code>yarn add mockjs --dev</code>  （用yarn，加–save，是指开发依赖）<br>关于mockjs <a href="http://mockjs.com/" target="_blank" rel="noopener">mockjs官网</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import Mock from &apos;mockjs&apos;</span><br><span class="line">import data from &apos;../data.json&apos;</span><br><span class="line"></span><br><span class="line">//Mock.mock( rurl, template )</span><br><span class="line">//记录数据模板。当拦截到匹配 rurl 的 Ajax 请求时，将根据数据模板 template 生成模拟数据，并作为响应数据返回。</span><br><span class="line">Mock.mock(&apos;/good/seller&apos;, &#123;</span><br><span class="line">    code: 0,</span><br><span class="line">    codeMsg: &apos;成功&apos;,</span><br><span class="line">    data: data.seller</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Mock.mock(&apos;/good/goods&apos;, &#123;</span><br><span class="line">    code: 0,</span><br><span class="line">    codeMsg: &apos;成功&apos;,</span><br><span class="line">    data: data.seller</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Mock.mock(&apos;/good/ratings&apos;, &#123;</span><br><span class="line">    code: 0,</span><br><span class="line">    codeMsg: &apos;成功&apos;,</span><br><span class="line">    data: data.seller</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="安装axios"><a href="#安装axios" class="headerlink" title="安装axios"></a>安装axios</h2><p><code>yarn add axios</code> （不加，默认是生产依赖）</p>
-<blockquote>
-<p><strong>注意：</strong>不能全部将依赖安装在开发环境或是生产环境，这样会造成文件的多余，按需安装，多数是安装在开发环境下的。</p>
-</blockquote>
-<h2 id="引入文件字体"><a href="#引入文件字体" class="headerlink" title="引入文件字体"></a>引入文件字体</h2><p><a href="https://icomoon.io/" target="_blank" rel="noopener">图标字体官网</a>  <a href="https://icomoon.io/" target="_blank" rel="noopener">https://icomoon.io/</a></p>
-<p>1.点击右上角导入本地图标<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体1.png" alt="这里写图片描述"><br>2.本地导入完成后，全部选中，点击右下角创建图标字体<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体2.png" alt="这里写图片描述"><br>3.点击右下角download<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体3.png" alt="这里写图片描述"><br>4.项目文件中static下将style.css引入<br><img src="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/图标字体4.png" alt="这里写图片描述"><br>5.将fonts放在src/assert<br>6.用法：将图标类名直接设置在所需的标签上即可，引入时注意style.css的路径</p>
-<h2 id="eslint报错"><a href="#eslint报错" class="headerlink" title="eslint报错"></a>eslint报错</h2><p>1.vue报错：<code>eslint-disable-next-line to ignore the next line.</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Use // eslint-disable-next-line to ignore the next line.</span><br><span class="line">Use /* eslint-disable */ to ignore all warnings in a file.</span><br></pre></td></tr></table></figure>
-<p>错误解析：执行npm run dev时报错以上信息，原因是空多了一行，空多了一行就会报错。直接把行删除掉，最多只能空一行。<br>或者用//注释空行<br>如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import foo from &apos;@/components/foo&apos;  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">Vue.use(Router)  //删除一行空行</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import foo from &apos;@/components/foo&apos;  </span><br><span class="line">//  </span><br><span class="line">//  </span><br><span class="line">  </span><br><span class="line">Vue.use(Router)  //注释空行</span><br></pre></td></tr></table></figure>
-<p>2.vue报错：<code>http://eslint.org/docs/rules/no-trailing-spaces  Trailing spaces not allowed</code><br>错误解析：码尾部不能有空格（整行复制粘贴的时候容易出错）</p>
-<p>3.vue报错：<code>http://eslint.org/docs/rules/eol-last   Newline required at end of file but not found</code><br>错误解析：新建文件的时，最后面要加一行空行</p>
-<p>3.其他常见错误整理：</p>
-<ul>
-<li>“//“ 注释后面要有个空格;</li>
-<li>分号也不能写，js里只能用单引号;</li>
-<li>new 后面对象首字母得是大写；而且new出来的对象，前面得用个变量接收；如果不接收，需要在前面写一行注释; 这就是为什么，main.js里面 new Vue的时候，前面有一行注释了</li>
-</ul>
-<h2 id="App-vue里开始编程"><a href="#App-vue里开始编程" class="headerlink" title="App.vue里开始编程"></a>App.vue里开始编程</h2><p>1.使用stylus语法，安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add stylus --save</span><br></pre></td></tr></table></figure>
-<p>2.同样的方法安装stylus-loader、postcss-loader、css-loader、style-loader；</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">// gulp.src() //读文件</span><br><span class="line">// gulp.dest()//写文件</span><br><span class="line">// gulp.task()//任务</span><br><span class="line">// gulp.watch()//监听</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var gulp = require(&quot;gulp&quot;);</span><br><span class="line">var htmlClean = require(&quot;gulp-htmlclean&quot;) //压缩HTML的插件</span><br><span class="line">var imgMin = require(&quot;gulp-imagemin&quot;) //压缩图片</span><br><span class="line">var uglify = require(&quot;gulp-uglify&quot;) //压缩js</span><br><span class="line">var stripDebug = require(&quot;gulp-strip-debug&quot;) //去掉调试语句</span><br><span class="line">var concat = require(&quot;gulp-concat&quot;) // 将所有js文件拼接成一个js</span><br><span class="line">var less = require(&quot;gulp-less&quot;) //将less文件转换成css</span><br><span class="line">var postcss = require(&quot;gulp-postcss&quot;) //自动添加css3样式前缀和压缩代码</span><br><span class="line">var autoprefixer = require(&quot;autoprefixer&quot;) //添加前缀</span><br><span class="line">var cssnano = require(&quot;cssnano&quot;) //压缩css代码</span><br><span class="line">var connect = require(&quot;gulp-connect&quot;) //开启简易模拟你服务器</span><br><span class="line">// var express = require(&apos;express&apos;)</span><br><span class="line">// var path = require(&apos;path&apos;)</span><br><span class="line">// var app = express()</span><br><span class="line">//     app.use(express.static(path.join(__dirname, &apos;src&apos;))); </span><br><span class="line"></span><br><span class="line">//开发环境和生产环境的判断</span><br><span class="line">//开发环境：不压缩代码,不去掉调试语句</span><br><span class="line">// console.log(process.env.NODE_ENV == &quot;production&quot;)//  生产模式</span><br><span class="line">var devMode = process.env.NODE_ENV == &quot;development&quot; //  开发模式</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//以对象形式获取路径</span><br><span class="line">var folder = &#123;</span><br><span class="line">    src: &quot;src/&quot;, //开发目录文件夹</span><br><span class="line">    dist: &quot;dist/&quot; //压缩打包后的目录文件夹</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//创建任务</span><br><span class="line">gulp.task(&quot;html&quot;, function() &#123;</span><br><span class="line">    var page = gulp.src(folder.src + &quot;html/*&quot;) //流文件</span><br><span class="line">        .pipe(connect.reload())</span><br><span class="line">    if (!devMode) &#123;</span><br><span class="line">        page.pipe(htmlClean()) //通过调用htmlclean插件压缩html</span><br><span class="line">    &#125;</span><br><span class="line">    page.pipe(gulp.dest(folder.dist + &quot;html/&quot;)) //通过pipe运输到目的文件夹</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;imgs&quot;, function() &#123;</span><br><span class="line">    gulp.src(folder.src + &quot;imgs/*&quot;)</span><br><span class="line">        .pipe(imgMin()) //压缩图片</span><br><span class="line">        .pipe(gulp.dest(folder.dist + &quot;imgs/&quot;))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;js&quot;, function() &#123;</span><br><span class="line">    var page = gulp.src(folder.src + &quot;js/*&quot;)</span><br><span class="line">        .pipe(connect.reload())</span><br><span class="line">    if (!devMode) &#123;</span><br><span class="line">        page.pipe(stripDebug()) //去掉调试语句</span><br><span class="line">        // page.pipe(concat(&quot;main.js&quot;)) //将所有src里的js文件拼接成一个放在main.js下</span><br><span class="line">        page.pipe(uglify()) //压缩js</span><br><span class="line">    &#125;</span><br><span class="line">    page.pipe(gulp.dest(folder.dist + &quot;js/&quot;))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;css&quot;, function() &#123;</span><br><span class="line">    var opitions = [autoprefixer(), cssnano()]; //将添加前缀和压缩代码方法存在数组里，方便调用</span><br><span class="line">    var page = gulp.src(folder.src + &quot;css/*&quot;)</span><br><span class="line">        .pipe(connect.reload())</span><br><span class="line">        .pipe(less()) //将less文件转换成css</span><br><span class="line">    if (!devMode) &#123;</span><br><span class="line">        page.pipe(postcss(opitions)) //调用同时压缩代码、添加前缀功能</span><br><span class="line">    &#125;</span><br><span class="line">    page.pipe(gulp.dest(folder.dist + &quot;css/&quot;))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//监听 (src文件有变化时，dist文件随之改变)</span><br><span class="line">gulp.task(&quot;watch&quot;, function() &#123;</span><br><span class="line">    gulp.watch(folder.src + &quot;html/*&quot;, [&quot;html&quot;])</span><br><span class="line">    gulp.watch(folder.src + &quot;css/*&quot;, [&quot;css&quot;])</span><br><span class="line">    gulp.watch(folder.src + &quot;js/*&quot;, [&quot;js&quot;])</span><br><span class="line">    gulp.watch(folder.src + &quot;imgs/*&quot;, [&quot;imgs&quot;])</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//开启模拟服务器</span><br><span class="line">gulp.task(&quot;server&quot;, function() &#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        port: &quot;8090&quot;, //手动修改端口号</span><br><span class="line">        livereload: true, //浏览器自动刷新</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//执行任务</span><br><span class="line">gulp.task(&quot;default&quot;, [&quot;html&quot;, &quot;imgs&quot;, &quot;js&quot;, &quot;css&quot;, &quot;watch&quot;, &quot;server&quot;])</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -349,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></p>
+        <p><span>本文标题:</span><a href="/2018/06/23/gulp配置/">gulp配置</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-11, 22:56:00</p>
-        <p><span>最后更新:</span>2018-06-11, 23:07:09</p>
+        <p><span>发布时间:</span>2018-06-23, 01:35:00</p>
+        <p><span>最后更新:</span>2018-06-23, 01:36:54</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/" title="eleme项目框架搭建及eslint语法常见报错">http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/23/gulp配置/" title="gulp配置">http://www.mandywu.xyz/2018/06/23/gulp配置/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/23/gulp配置/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -367,16 +337,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">
-                    关于字符串拼接与文档碎片（性能优化）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/09/vue实现饿了么外卖系统/">
-                    vue实现饿了么外卖系统（完整开发流程）
+                <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">
+                    关于字符串拼接与文档碎片（性能优化）
                 </a>
             </div>
         
@@ -388,7 +352,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局安装vue-cli"><span class="toc-number">1.</span> <span class="toc-text">全局安装vue-cli</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装webpack模板"><span class="toc-number">2.</span> <span class="toc-text">安装webpack模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mockjs模拟数据"><span class="toc-number">3.</span> <span class="toc-text">安装mockjs模拟数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装axios"><span class="toc-number">4.</span> <span class="toc-text">安装axios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入文件字体"><span class="toc-number">5.</span> <span class="toc-text">引入文件字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eslint报错"><span class="toc-number">6.</span> <span class="toc-text">eslint报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-vue里开始编程"><span class="toc-number">7.</span> <span class="toc-text">App.vue里开始编程</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -424,7 +388,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"eleme项目框架搭建及eslint语法常见报错　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"gulp配置　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -443,8 +407,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/11/eleme项目框架搭建及eslint语法常见报错/';
-            this.page.identifier = '2018/06/11/eleme项目框架搭建及eslint语法常见报错/';
+            this.page.url = 'http://www.mandywu.xyz/2018/06/23/gulp配置/';
+            this.page.identifier = '2018/06/23/gulp配置/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -466,15 +430,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" title="上一篇: 关于字符串拼接与文档碎片（性能优化）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/06/09/vue实现饿了么外卖系统/" title="下一篇: vue实现饿了么外卖系统（完整开发流程）">
+            <a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" title="下一篇: 关于字符串拼接与文档碎片（性能优化）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
