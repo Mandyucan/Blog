@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
+<meta name="description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而`innerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
 <meta name="keywords" content="性能优化 javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于字符串拼接与文档碎片（性能优化）">
 <meta property="og:url" content="http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
+<meta property="og:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而`innerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-22T15:24:42.533Z">
+<meta property="og:updated_time" content="2018-06-22T15:33:11.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于字符串拼接与文档碎片（性能优化）">
-<meta name="twitter:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而i`nnerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
+<meta name="twitter:description" content="在实际中我们一般使用`createElement`的方式，因为`createElement`的方式是直接操作dom树，而`innerHTML`是需要解析字符串的，其间有一个解析的过程；性能上，`createElement`和`innerHTML`在很多浏览器中是有差别的；如果页面小还好，但要是有大量内容和节点的页面，性能上的差距就会体现出来了...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -340,7 +340,7 @@
         <p><span>本文标题:</span><a href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
         <p><span>发布时间:</span>2018-06-22, 23:23:00</p>
-        <p><span>最后更新:</span>2018-06-22, 23:24:42</p>
+        <p><span>最后更新:</span>2018-06-22, 23:33:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/" title="关于字符串拼接与文档碎片（性能优化）">http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/22/关于字符串拼接与文档碎片（性能优化）/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
