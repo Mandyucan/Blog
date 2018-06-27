@@ -272,6 +272,98 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-根据resume做出的总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/27/根据resume做出的总结/" class="article-date">
+      <time datetime="2018-06-27T14:19:06.845Z" itemprop="datePublished">2018-06-27</time>
+</a>
+
+ 
+    <a href="/2018/06/27/根据resume做出的总结/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/06/27/根据resume做出的总结/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><hr>
+<p><strong>主流浏览器（5个）</strong></p>
+<ol>
+<li>ie  ：微软的绑定浏览器；</li>
+<li>chrome ；</li>
+<li>firefox ：火狐浏览器；</li>
+<li>opera ：这是欧洲的一个浏览器，特点是兼容性很强；</li>
+<li>safari<br>ps:主流浏览器只有以上5个！(UC搜狗什么的都不是)</li>
+</ol>
+<hr>
+<p><strong>主流浏览器内核</strong><br>浏览器 : 内核<br>ie  :   trident<br>chrome :   Blink/webkit (谷歌以前和safari一起开发过所以以前用的是webkit，现在已经把webkit里面的核心内容提取出来单独做了一款新的内核叫做Blink。)<br> firefox :   Gecko<br> opera:    presto<br> safari :    webkit</p>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p><strong>引入方式（4种）</strong></p>
+<ol>
+<li>行间样式：直接在html 的标签里面写style属性；</li>
+<li>页面级CSS：&lt;style type=”text/css”&gt;</li>
+<li>外部CSS文件：<link rel="”stylesheet”" href="””">  （link加载不会阻塞html的加载，html和css属于异步加载）</li>
+<li>@import url() ,url里面写上css文件的地址，可以加引号也可以不加引号。<br>程序读到import的时候，会忽略掉import，等到html里面的所有内容包括图片在内的所有资源全都加载完之后才加载import的css文件，也就是说，import引入的css文件和html的加载是同步进行的。</li>
+</ol>
+<hr>
+<p><strong>选择器</strong></p>
+<ul>
+<li>id选择器</li>
+<li>class类选择器</li>
+<li>标签选择器</li>
+<li>通配符选择器</li>
+<li><p>属性选择器</p>
+<p><strong>优先级</strong>： !important &gt; 行间样式 &gt; id &gt; class|属性 &gt; 标签 &gt; * </p>
+</li>
+</ul>
+<p><strong>选择器的权重值</strong><br>CSS选择器 ： 权重值</p>
+<ul>
+<li>!important： 无穷大</li>
+<li>行间样式 ：    1000</li>
+<li>id    ： 100</li>
+<li>class、属性、伪类：10</li>
+<li>标签、伪元素 ： 1</li>
+<li>通配符    0</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-gulp配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -924,85 +1016,6 @@
       
         <p class="article-more-link">
           <a href="/2018/05/23/Markdown-简要语法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-利用gitHub-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" class="article-date">
-      <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">2018-05-21</time>
-</a>
-
- 
-    <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2018/05/21/利用gitHub-Hexo搭建个人博客/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              前期准备： 1. 有自己的github账号； 2. 配置环境：电脑已安装node ；
-hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具
-官网： http://hexo.io ... 
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
