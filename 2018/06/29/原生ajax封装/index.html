@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="1. ie  ：微软的绑定浏览器； 2. chrome ； 3. firefox ：火狐浏览器； 4. opera ：这是欧洲的一个浏览器，特点是兼容性很强； 5. safari  ps:主流浏览器只有以上5个！(UC搜狗什么的都不是)...">
-<meta name="keywords" content="resume">
+<meta name="description" content="function ajax(method, url, data, callback, flag) { //创建一个ajax对象  但是要兼容IE var xhr = null; if (window.XMLHttpRequest) { xhr = new XMLHttpRequest(); } else { xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;)">
+<meta name="keywords" content="ajax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="根据resume做出的总结">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/28/根据resume做出的总结/index.html">
+<meta property="og:title" content="原生ajax封装">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/06/29/原生ajax封装/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="1. ie  ：微软的绑定浏览器； 2. chrome ； 3. firefox ：火狐浏览器； 4. opera ：这是欧洲的一个浏览器，特点是兼容性很强； 5. safari  ps:主流浏览器只有以上5个！(UC搜狗什么的都不是)...">
+<meta property="og:description" content="function ajax(method, url, data, callback, flag) { //创建一个ajax对象  但是要兼容IE var xhr = null; if (window.XMLHttpRequest) { xhr = new XMLHttpRequest(); } else { xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;)">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-28T14:03:06.440Z">
+<meta property="og:updated_time" content="2018-06-29T13:47:24.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="根据resume做出的总结">
-<meta name="twitter:description" content="1. ie  ：微软的绑定浏览器； 2. chrome ； 3. firefox ：火狐浏览器； 4. opera ：这是欧洲的一个浏览器，特点是兼容性很强； 5. safari  ps:主流浏览器只有以上5个！(UC搜狗什么的都不是)...">
+<meta name="twitter:title" content="原生ajax封装">
+<meta name="twitter:description" content="function ajax(method, url, data, callback, flag) { //创建一个ajax对象  但是要兼容IE var xhr = null; if (window.XMLHttpRequest) { xhr = new XMLHttpRequest(); } else { xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;)">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>根据resume做出的总结 | mandy&#39;blog</title>
+<title>原生ajax封装 | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -267,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-根据resume做出的总结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-原生ajax封装" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/28/根据resume做出的总结/" class="article-date">
-      <time datetime="2018-06-28T14:56:00.000Z" itemprop="datePublished">2018-06-28</time>
+      <a href="/2018/06/29/原生ajax封装/" class="article-date">
+      <time datetime="2018-06-29T14:56:00.000Z" itemprop="datePublished">2018-06-29</time>
 </a>
 
 
@@ -286,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      根据resume做出的总结
+      原生ajax封装
     </h1>
   
 
@@ -297,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,46 +307,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><hr>
-<p><strong>主流浏览器（5个）</strong></p>
-<ol>
-<li>ie  ：微软的绑定浏览器；</li>
-<li>chrome ；</li>
-<li>firefox ：火狐浏览器；</li>
-<li>opera ：这是欧洲的一个浏览器，特点是兼容性很强；</li>
-<li>safari<br>ps:主流浏览器只有以上5个！(UC搜狗什么的都不是)</li>
-</ol>
-<hr>
-<p><strong>主流浏览器内核</strong><br>浏览器 : 内核<br>ie  :   trident<br>chrome :   Blink/webkit (谷歌以前和safari一起开发过所以以前用的是webkit，现在已经把webkit里面的核心内容提取出来单独做了一款新的内核叫做Blink。)<br> firefox :   Gecko<br> opera:    presto<br> safari :    webkit</p>
-<hr>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p><strong>引入方式（4种）</strong></p>
-<ol>
-<li>行间样式：直接在html 的标签里面写style属性；</li>
-<li>页面级CSS：&lt;style type=”text/css”&gt;</li>
-<li>外部CSS文件：<link rel="”stylesheet”" href="””">  （link加载不会阻塞html的加载，html和css属于异步加载）</li>
-<li>@import url() ,url里面写上css文件的地址，可以加引号也可以不加引号。<br>程序读到import的时候，会忽略掉import，等到html里面的所有内容包括图片在内的所有资源全都加载完之后才加载import的css文件，也就是说，import引入的css文件和html的加载是同步进行的。</li>
-</ol>
-<hr>
-<p><strong>选择器</strong></p>
-<ul>
-<li>id选择器</li>
-<li>class类选择器</li>
-<li>标签选择器</li>
-<li>通配符选择器</li>
-<li><p>属性选择器</p>
-<p><strong>优先级</strong>： !important &gt; 行间样式 &gt; id &gt; class|属性 &gt; 标签 &gt; * </p>
-</li>
-</ul>
-<p><strong>选择器的权重值</strong><br>CSS选择器 ： 权重值</p>
-<ul>
-<li>!important： 无穷大</li>
-<li>行间样式 ：    1000</li>
-<li>id    ： 100</li>
-<li>class、属性、伪类：10</li>
-<li>标签、伪元素 ： 1</li>
-<li>通配符    0</li>
-</ul>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function ajax(method, url, data, callback, flag) &#123;</span><br><span class="line">    //创建一个ajax对象  但是要兼容IE</span><br><span class="line">    var xhr = null;</span><br><span class="line">    if (window.XMLHttpRequest) &#123;</span><br><span class="line">        xhr = new XMLHttpRequest();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //请求方式不同时的兼容性写法</span><br><span class="line">    method = method.toUpperCase(); //兼容大小写，避免传入小写不显示</span><br><span class="line">    if (method == &apos;GET&apos;) &#123;</span><br><span class="line">        xhr.open(method, url + &apos;?&apos; + data, flag);</span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125; else if (method == &apos;POST&apos;) &#123;</span><br><span class="line">        xhr.open(method, url, flag);</span><br><span class="line">        xhr.setRequestHeader(&apos;content-type&apos;, &apos;application/x-www-form-urlencoded&apos;)</span><br><span class="line">        xhr.send(data);</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.onreadystatechange = function() &#123;</span><br><span class="line">        if (xhr.readyState == 4) &#123;</span><br><span class="line">            if (xhr.status == 200) &#123;</span><br><span class="line">                callback(xhr.responseText);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                console.log(&apos;error&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -354,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/28/根据resume做出的总结/">根据resume做出的总结</a></p>
+        <p><span>本文标题:</span><a href="/2018/06/29/原生ajax封装/">原生ajax封装</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-28, 22:56:00</p>
-        <p><span>最后更新:</span>2018-06-28, 22:03:06</p>
+        <p><span>发布时间:</span>2018-06-29, 22:56:00</p>
+        <p><span>最后更新:</span>2018-06-29, 21:47:24</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/28/根据resume做出的总结/" title="根据resume做出的总结">http://www.mandywu.xyz/2018/06/28/根据resume做出的总结/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/28/根据resume做出的总结/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/29/原生ajax封装/" title="原生ajax封装">http://www.mandywu.xyz/2018/06/29/原生ajax封装/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/29/原生ajax封装/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -372,16 +333,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/29/原生ajax封装/">
-                    原生ajax封装
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/23/gulp配置/">
-                    gulp配置
+                <a href="/2018/06/28/根据resume做出的总结/">
+                    根据resume做出的总结
                 </a>
             </div>
         
@@ -393,7 +348,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Html"><span class="toc-number">1.</span> <span class="toc-text">Html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">2.</span> <span class="toc-text">CSS</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -429,7 +384,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"根据resume做出的总结　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"原生ajax封装　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -448,8 +403,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/28/根据resume做出的总结/';
-            this.page.identifier = '2018/06/28/根据resume做出的总结/';
+            this.page.url = 'http://www.mandywu.xyz/2018/06/29/原生ajax封装/';
+            this.page.identifier = '2018/06/29/原生ajax封装/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -471,15 +426,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/29/原生ajax封装/" title="上一篇: 原生ajax封装">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/06/23/gulp配置/" title="下一篇: gulp配置">
+            <a href="/2018/06/28/根据resume做出的总结/" title="下一篇: 根据resume做出的总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
