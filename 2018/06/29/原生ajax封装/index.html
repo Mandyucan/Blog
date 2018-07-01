@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="mandy&#39;blog">
 <meta property="og:description" content="function ajax(method, url, data, callback, flag) { //创建一个ajax对象  但是要兼容IE var xhr = null; if (window.XMLHttpRequest) { xhr = new XMLHttpRequest(); } else { xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;)">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-29T13:47:24.726Z">
+<meta property="og:updated_time" content="2018-07-01T15:18:19.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生ajax封装">
 <meta name="twitter:description" content="function ajax(method, url, data, callback, flag) { //创建一个ajax对象  但是要兼容IE var xhr = null; if (window.XMLHttpRequest) { xhr = new XMLHttpRequest(); } else { xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;)">
@@ -307,7 +307,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function ajax(method, url, data, callback, flag) &#123;</span><br><span class="line">    //创建一个ajax对象  但是要兼容IE</span><br><span class="line">    var xhr = null;</span><br><span class="line">    if (window.XMLHttpRequest) &#123;</span><br><span class="line">        xhr = new XMLHttpRequest();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //请求方式不同时的兼容性写法</span><br><span class="line">    method = method.toUpperCase(); //兼容大小写，避免传入小写不显示</span><br><span class="line">    if (method == &apos;GET&apos;) &#123;</span><br><span class="line">        xhr.open(method, url + &apos;?&apos; + data, flag);</span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125; else if (method == &apos;POST&apos;) &#123;</span><br><span class="line">        xhr.open(method, url, flag);</span><br><span class="line">        xhr.setRequestHeader(&apos;content-type&apos;, &apos;application/x-www-form-urlencoded&apos;)</span><br><span class="line">        xhr.send(data);</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.onreadystatechange = function() &#123;</span><br><span class="line">        if (xhr.readyState == 4) &#123;</span><br><span class="line">            if (xhr.status == 200) &#123;</span><br><span class="line">                callback(xhr.responseText);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                console.log(&apos;error&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="什么是-Ajax-如何创建一个Ajax？"><a href="#什么是-Ajax-如何创建一个Ajax？" class="headerlink" title="什么是 Ajax? 如何创建一个Ajax？"></a>什么是 Ajax? 如何创建一个Ajax？</h2><ul>
+<li><p>AJAX(Asynchronous Javascript And XML) = 异步 JavaScript + XML 在后台与服务器进行异步数据交换，不用重载整个网页，实现局部刷新。</p>
+</li>
+<li><p>创建 ajax 步骤：</p>
+<ul>
+<li>1.创建 XMLHttpRequest 对象</li>
+<li>2.创建一个新的 HTTP 请求，并指定该 HTTP 请求的类型、验证信息</li>
+<li>3.设置响应 HTTP 请求状态变化的回调函数</li>
+<li>4.发送 HTTP 请求</li>
+<li>5.获取异步调用返回的数据</li>
+<li>6.使用 JavaScript 和 DOM 实现局部刷新</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(&quot;POST&quot;, url, true);</span><br><span class="line">xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">xhr.onreadystatechange = function () &#123;</span><br><span class="line">    if (xhr.readyState == 4 &amp;&amp; (xhr.status == 200 || xhr.status == 304)) &#123;</span><br><span class="line">        fn.call(this, xhr.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.send(data);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function ajax(method, url, data, callback, flag) &#123;</span><br><span class="line">    //创建一个ajax对象  但是要兼容IE</span><br><span class="line">    var xhr = null;</span><br><span class="line">    if (window.XMLHttpRequest) &#123;</span><br><span class="line">        xhr = new XMLHttpRequest();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        xhr = new ActiveXObject(&apos;Micro soft.XMLHttp&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //请求方式不同时的兼容性写法</span><br><span class="line">    method = method.toUpperCase(); //兼容大小写，避免传入小写不显示</span><br><span class="line">    if (method == &apos;GET&apos;) &#123;</span><br><span class="line">        xhr.open(method, url + &apos;?&apos; + data, flag);</span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125; else if (method == &apos;POST&apos;) &#123;</span><br><span class="line">        xhr.open(method, url, flag);</span><br><span class="line">        xhr.setRequestHeader(&apos;content-type&apos;, &apos;application/x-www-form-urlencoded&apos;)</span><br><span class="line">        xhr.send(data);</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.onreadystatechange = function() &#123;</span><br><span class="line">        if (xhr.readyState == 4) &#123;</span><br><span class="line">            if (xhr.status == 200) &#123;</span><br><span class="line">                callback(xhr.responseText);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                console.log(&apos;error&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -318,7 +333,7 @@
         <p><span>本文标题:</span><a href="/2018/06/29/原生ajax封装/">原生ajax封装</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
         <p><span>发布时间:</span>2018-06-29, 22:56:00</p>
-        <p><span>最后更新:</span>2018-06-29, 21:47:24</p>
+        <p><span>最后更新:</span>2018-07-01, 23:18:19</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/29/原生ajax封装/" title="原生ajax封装">http://www.mandywu.xyz/2018/06/29/原生ajax封装/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/29/原生ajax封装/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -332,6 +347,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/07/01/FE-Interview-Questions-HTTP/">
+                    FE-Interview-Questions-HTTP
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -348,7 +369,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Ajax-如何创建一个Ajax？"><span class="toc-number">1.</span> <span class="toc-text">什么是 Ajax? 如何创建一个Ajax？</span></a></li></ol>
         
     </div>
     <style>
@@ -426,7 +447,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/07/01/FE-Interview-Questions-HTTP/" title="上一篇: FE-Interview-Questions-HTTP">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -438,7 +461,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">根据resume做出的总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-jQuery/">FE-Interview-Questions-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-HTTP/">FE-Interview-Questions-HTTP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">根据resume做出的总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
 
 
 
