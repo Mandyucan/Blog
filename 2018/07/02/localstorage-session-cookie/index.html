@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
-<meta name="keywords" content="npm,yarn">
+<meta name="description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
+<meta name="keywords" content="resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用yarn代替npm作为node.js的模块管理器">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/index.html">
+<meta property="og:title" content="cookies、sessionStorage 和 localStorage">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
+<meta property="og:description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png">
-<meta property="og:updated_time" content="2018-05-23T11:51:49.130Z">
+<meta property="og:updated_time" content="2018-07-02T14:04:55.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用yarn代替npm作为node.js的模块管理器">
-<meta name="twitter:description" content="npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！ ...">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png">
+<meta name="twitter:title" content="cookies、sessionStorage 和 localStorage">
+<meta name="twitter:description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>用yarn代替npm作为node.js的模块管理器 | mandy&#39;blog</title>
+<title>cookies、sessionStorage 和 localStorage | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -269,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-用yarn代替npm作为node.js的模块管理器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-localstorage-session-cookie" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" class="article-date">
-      <time datetime="2018-05-23T11:48:00.000Z" itemprop="datePublished">2018-05-23</time>
+      <a href="/2018/07/02/localstorage-session-cookie/" class="article-date">
+      <time datetime="2018-07-02T14:56:00.000Z" itemprop="datePublished">2018-07-02</time>
 </a>
 
 
@@ -288,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用yarn代替npm作为node.js的模块管理器
+      cookies、sessionStorage 和 localStorage
     </h1>
   
 
@@ -296,14 +294,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/npm-yarn/">npm/yarn</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yarn/">yarn</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -313,25 +307,69 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>npm是node.js默认的包管理工具，通过npm可以下载安装或者发布包,但是在下载过程中，由于npm下载速度慢等原因导致安装过程中依赖包缺失等问题，在安装webpack问题上，没有少折腾（折腾几个通宵）！！！ 听了朋友的建议，转战yarn！</p>
-<blockquote>
-<p>Yarn是Facebook公司出品的用于管理node.js包的一款软件,npm安装速度比较慢，而且当项目中模块数量越来越多时，管理这些模块及其依赖的版本会很麻烦，npm在模块安装的过程中可以执行程序，安全性不高。</p>
-<p>yarn的存在正好解决了这些问题，模块安装速度快，当某些模块通过yarn安装过后，再次安装甚至不需要连接网络；yarn也可以很好的控制模块依赖的版本（通过yarn.lock文件锁住），而且安全可靠。</p>
-</blockquote>
-<p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">yarn官网</a></p>
-<h3 id="yarn-安装"><a href="#yarn-安装" class="headerlink" title="yarn 安装"></a>yarn 安装</h3><p>1、可直接通过npm工具全局安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure></p>
-<p>2、参考官网各平台安装方式<a href="https://yarnpkg.com/zh-Hans/docs/install#windows-stable" target="_blank" rel="noopener">官网各平台安装方式</a></p>
-<p>安装完成后，可输入<code>yarn -V</code>，正确显示版本号说明安装成功;<code>yarn -h</code>可查看帮助信息</p>
-<h3 id="yarn-使用"><a href="#yarn-使用" class="headerlink" title="yarn 使用"></a>yarn 使用</h3><p><img src="/2018/05/23/用yarn代替npm作为node.js的模块管理器/npm与yarn.png" alt="这里写图片描述"></p>
-<p><a href="https://yarnpkg.com/zh-Hans/docs" target="_blank" rel="noopener">更多请参考官网</a></p>
-<p>yarn也可采用淘宝镜像，输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h3 id="Some-tips"><a href="#Some-tips" class="headerlink" title="Some tips"></a>Some tips</h3><ul>
-<li><p>package.json里面有写依赖的话，用yarn install就行</p>
+        <h2 id="cookies、sessionStorage-和-localStorage"><a href="#cookies、sessionStorage-和-localStorage" class="headerlink" title="cookies、sessionStorage 和 localStorage"></a>cookies、sessionStorage 和 localStorage</h2><hr>
+<p><strong>浏览器本地存储</strong></p>
+<ul>
+<li>在较高版本的浏览器中，js提供了sessionStorage和globalStorage。在HTML5中提供了localStorage来取代globalStorage</li>
+<li>html5中的Web Storage包括了两种存储方式：sessionStorage和localStorage</li>
+<li>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储</li>
+<li>而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的</li>
+</ul>
+<p><strong>web storage和cookie的区别</strong></p>
+<ul>
+<li>Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用</li>
+<li>除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie</li>
+<li>但是cookie也是不可以或缺的：cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生</li>
+<li>浏览器的支持除了IE７及以下不支持外，其他标准浏览器都完全支持(ie及FF需在web服务器里运行)，值得一提的是IE总是办好事，例如IE7、IE6中的userData其实就是javascript本地存储的解决方案。通过简单的代码封装可以统一到所有的浏览器都支持web storage</li>
+<li>localStorage和sessionStorage都具有相同的操作方法，例如setItem、getItem和removeItem等</li>
+</ul>
+<p><strong>cookie 和session 的区别：</strong></p>
+<ul>
+<li><p>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
 </li>
-<li><p>没有写依赖，自己安装: yarn add xxxx；如果是开发依赖后面加上 –dev</p>
+<li><p>2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗</p>
+<ul>
+<li>考虑到安全应当使用session。</li>
+</ul>
 </li>
-<li><p>看你用什么安装，如果是yarn，yarn install默认是安装生成环境下的依赖；yarn install –dev安装开发环境下的依赖；<br>如果是npm，<br>npm install –save 安装生产依赖；<br>npm install –save-dev 开发环境依赖</p>
+<li><p>3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能</p>
+<ul>
+<li>考虑到减轻服务器性能方面，应当使用COOKIE。</li>
+</ul>
+</li>
+<li><p>4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
+</li>
+<li><p>5、所以个人建议：</p>
+<ul>
+<li><p>将登陆信息等重要信息存放为SESSION</p>
+</li>
+<li><p>其他信息如果需要保留，可以放在COOKIE中</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>描述 cookies、sessionStorage 和 localStorage 的区别？</strong></p>
+<ul>
+<li><p>与服务器交互：</p>
+<ul>
+<li>cookie 是网站为了标示用户身份而储存在用户本地终端上的数据（通常经过加密）</li>
+<li>cookie 始终会在同源 http 请求头中携带（即使不需要），在浏览器和服务器间来回传递</li>
+<li>sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存</li>
+</ul>
+<ul>
+<li>存储大小：</li>
+</ul>
+<ul>
+<li>cookie 数据根据不同浏览器限制，大小一般不能超过 4k</li>
+<li>sessionStorage 和 localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大</li>
+</ul>
+</li>
+<li><p>有期时间：</p>
+<ul>
+<li>localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
+<li>sessionStorage  数据在当前浏览器窗口关闭后自动删除</li>
+<li>cookie           设置的cookie过期时间之前一直有效，与浏览器是否关闭无关</li>
+</ul>
 </li>
 </ul>
 
@@ -342,13 +380,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/02/localstorage-session-cookie/">cookies、sessionStorage 和 localStorage</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-05-23, 19:48:00</p>
-        <p><span>最后更新:</span>2018-05-23, 19:51:49</p>
+        <p><span>发布时间:</span>2018-07-02, 22:56:00</p>
+        <p><span>最后更新:</span>2018-07-02, 22:04:55</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/" title="用yarn代替npm作为node.js的模块管理器">http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/02/localstorage-session-cookie/" title="cookies、sessionStorage 和 localStorage">http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -360,16 +398,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">
-                    git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/23/Hexo快速发布博文及插入图片/">
-                    Hexo快速发布博文及插入图片
+                <a href="/2018/07/01/FE-Interview-Questions-jQuery/">
+                    FE-Interview-Questions-jQuery
                 </a>
             </div>
         
@@ -381,7 +413,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn-安装"><span class="toc-number">1.</span> <span class="toc-text">yarn 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn-使用"><span class="toc-number">2.</span> <span class="toc-text">yarn 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Some-tips"><span class="toc-number">3.</span> <span class="toc-text">Some tips</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookies、sessionStorage-和-localStorage"><span class="toc-number">1.</span> <span class="toc-text">cookies、sessionStorage 和 localStorage</span></a></li></ol>
         
     </div>
     <style>
@@ -417,7 +449,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"用yarn代替npm作为node.js的模块管理器　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"cookies、sessionStorage 和 localStorage　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,8 +468,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/05/23/用yarn代替npm作为node.js的模块管理器/';
-            this.page.identifier = '2018/05/23/用yarn代替npm作为node.js的模块管理器/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/';
+            this.page.identifier = '2018/07/02/localstorage-session-cookie/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -459,15 +491,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/" title="上一篇: git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/05/23/Hexo快速发布博文及插入图片/" title="下一篇: Hexo快速发布博文及插入图片">
+            <a href="/2018/07/01/FE-Interview-Questions-jQuery/" title="下一篇: FE-Interview-Questions-jQuery">
                 <i class="fa fa-angle-right"></i>
             </a>
         
