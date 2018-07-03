@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
+<meta name="description" content="如何进行网站性能优化，content方面减少HTTP请求：合并文件、CSS精灵、inline Image，减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询...">
 <meta name="keywords" content="resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookies、sessionStorage 和 localStorage">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/index.html">
+<meta property="og:title" content="performance-optimization">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/03/localstorage-session-cookie/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
+<meta property="og:description" content="如何进行网站性能优化，content方面减少HTTP请求：合并文件、CSS精灵、inline Image，减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-07-02T14:04:55.957Z">
+<meta property="og:updated_time" content="2018-07-03T15:14:11.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cookies、sessionStorage 和 localStorage">
-<meta name="twitter:description" content="Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用，除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCook">
+<meta name="twitter:title" content="performance-optimization">
+<meta name="twitter:description" content="如何进行网站性能优化，content方面减少HTTP请求：合并文件、CSS精灵、inline Image，减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>cookies、sessionStorage 和 localStorage | mandy&#39;blog</title>
+<title>performance-optimization | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -270,8 +270,8 @@
       <div class="body-wrap"><article id="post-localstorage-session-cookie" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/02/localstorage-session-cookie/" class="article-date">
-      <time datetime="2018-07-02T14:56:00.000Z" itemprop="datePublished">2018-07-02</time>
+      <a href="/2018/07/03/localstorage-session-cookie/" class="article-date">
+      <time datetime="2018-07-03T15:13:00.000Z" itemprop="datePublished">2018-07-03</time>
 </a>
 
 
@@ -286,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      cookies、sessionStorage 和 localStorage
+      performance-optimization
     </h1>
   
 
@@ -307,70 +307,127 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="cookies、sessionStorage-和-localStorage"><a href="#cookies、sessionStorage-和-localStorage" class="headerlink" title="cookies、sessionStorage 和 localStorage"></a>cookies、sessionStorage 和 localStorage</h2><hr>
-<p><strong>浏览器本地存储</strong></p>
+        <h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><hr>
+<p><strong>如何进行网站性能优化</strong></p>
 <ul>
-<li>在较高版本的浏览器中，js提供了sessionStorage和globalStorage。在HTML5中提供了localStorage来取代globalStorage</li>
-<li>html5中的Web Storage包括了两种存储方式：sessionStorage和localStorage</li>
-<li>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储</li>
-<li>而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的</li>
-</ul>
-<p><strong>web storage和cookie的区别</strong></p>
+<li><p>content方面</p>
 <ul>
-<li>Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用</li>
-<li>除此之外，WebStorage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie</li>
-<li>但是cookie也是不可以或缺的：cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生</li>
-<li>浏览器的支持除了IE７及以下不支持外，其他标准浏览器都完全支持(ie及FF需在web服务器里运行)，值得一提的是IE总是办好事，例如IE7、IE6中的userData其实就是javascript本地存储的解决方案。通过简单的代码封装可以统一到所有的浏览器都支持web storage</li>
-<li>localStorage和sessionStorage都具有相同的操作方法，例如setItem、getItem和removeItem等</li>
-</ul>
-<p><strong>cookie 和session 的区别：</strong></p>
-<ul>
-<li><p>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
-</li>
-<li><p>2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗</p>
-<ul>
-<li>考虑到安全应当使用session。</li>
+<li>减少HTTP请求：合并文件、CSS精灵、inline Image</li>
+<li>减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询</li>
+<li>避免重定向：多余的中间访问</li>
+<li>使Ajax可缓存</li>
+<li>非必须组件延迟加载</li>
+<li>未来所需组件预加载</li>
+<li>减少DOM元素数量</li>
+<li>将资源放到不同的域下：浏览器同时从一个域下载资源的数目有限，增加域可以提高并行下载量</li>
+<li>减少iframe数量</li>
+<li>不要404</li>
 </ul>
 </li>
-<li><p>3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能</p>
+<li><p>Server方面</p>
 <ul>
-<li>考虑到减轻服务器性能方面，应当使用COOKIE。</li>
+<li>使用CDN</li>
+<li>添加Expires或者Cache-Control响应头</li>
+<li>对组件使用Gzip压缩</li>
+<li>配置ETag</li>
+<li>Flush Buffer Early</li>
+<li>Ajax使用GET进行请求</li>
+<li>避免空src的img标签</li>
 </ul>
 </li>
-<li><p>4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
-</li>
-<li><p>5、所以个人建议：</p>
+<li><p>Cookie方面</p>
 <ul>
-<li><p>将登陆信息等重要信息存放为SESSION</p>
+<li>减小cookie大小</li>
+<li>引入资源的域名不要包含cookie</li>
+</ul>
 </li>
-<li><p>其他信息如果需要保留，可以放在COOKIE中</p>
+<li><p>css方面</p>
+<ul>
+<li>将样式表放到页面顶部</li>
+<li>不使用CSS表达式</li>
+<li>不使用IE的Filter</li>
+</ul>
 </li>
+<li><p>Javascript方面</p>
+<ul>
+<li>将脚本放到页面底部</li>
+<li>将javascript和css从外部引入</li>
+<li>压缩javascript和css</li>
+<li>删除不需要的脚本</li>
+<li>减少DOM访问</li>
+<li>合理设计事件监听器</li>
+</ul>
+</li>
+<li><p>图片方面</p>
+<ul>
+<li>优化图片：根据实际颜色需要选择色深、压缩</li>
+<li>优化css精灵</li>
+<li>不要在HTML中拉伸图片</li>
+<li>保证favicon.ico小并且可缓存</li>
+</ul>
+</li>
+<li><p>移动方面</p>
+<ul>
+<li>保证组件小于25k</li>
+<li><code>Pack Components into a Multipart Document</code></li>
 </ul>
 </li>
 </ul>
-<p><strong>描述 cookies、sessionStorage 和 localStorage 的区别？</strong></p>
+<p><strong>你有用过哪些前端性能优化的方法？</strong></p>
 <ul>
-<li><p>与服务器交互：</p>
-<ul>
-<li>cookie 是网站为了标示用户身份而储存在用户本地终端上的数据（通常经过加密）</li>
-<li>cookie 始终会在同源 http 请求头中携带（即使不需要），在浏览器和服务器间来回传递</li>
-<li>sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存</li>
+<li>减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</li>
+<li>前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</li>
+<li>当需要设置的样式很多时设置className而不是直接操作style</li>
+<li>少用全局变量、缓存DOM节点查找的结果。减少IO读取操作</li>
+<li>避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳</li>
+<li>避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢</li>
 </ul>
+<p><strong>谈谈性能优化问题</strong></p>
 <ul>
-<li>存储大小：</li>
+<li>代码层面：避免使用css表达式，避免使用高级选择器，通配选择器</li>
+<li>缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便缓存，添加Expires头，服务端配置Etag，减少DNS查找等</li>
+<li>请求数量：合并样式和脚本，使用css图片精灵，初始首屏之外的图片资源按需加载，静态资源延迟加载</li>
+<li>请求带宽：压缩文件，开启GZIP</li>
 </ul>
+<p><strong>代码层面的优化</strong></p>
 <ul>
-<li>cookie 数据根据不同浏览器限制，大小一般不能超过 4k</li>
-<li>sessionStorage 和 localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大</li>
-</ul>
+<li><p>用hash-table来优化查找</p>
 </li>
-<li><p>有期时间：</p>
-<ul>
-<li>localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
-<li>sessionStorage  数据在当前浏览器窗口关闭后自动删除</li>
-<li>cookie           设置的cookie过期时间之前一直有效，与浏览器是否关闭无关</li>
-</ul>
+<li><p>少用全局变量</p>
 </li>
+<li><p>用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能</p>
+</li>
+<li><p>用setTimeout来避免页面失去响应</p>
+</li>
+<li><p>缓存DOM节点查找的结果</p>
+</li>
+<li><p>避免使用CSS Expression</p>
+</li>
+<li><p>避免全局查询</p>
+</li>
+<li><p>避免使用with(with会创建自己的作用域，会增加作用域链长度)</p>
+</li>
+<li><p>多个变量声明合并</p>
+</li>
+<li><p>避免图片和iFrame等的空Src。空Src会重新加载当前页面，影响速度和效率</p>
+</li>
+<li><p>尽量避免写在HTML标签中写Style属性</p>
+</li>
+</ul>
+<p><strong>前端性能优化最佳实践？</strong></p>
+<ul>
+<li>性能评级工具（PageSpeed 或 YSlow）</li>
+<li>合理设置 HTTP 缓存：Expires 与 Cache-control</li>
+<li>静态资源打包，开启 Gzip 压缩（节省响应流量）</li>
+<li>CSS3 模拟图像，图标base64（降低请求数）</li>
+<li>模块延迟(defer)加载/异步(async)加载</li>
+<li>Cookie 隔离（节省请求流量）</li>
+<li>localStorage（本地存储）</li>
+<li>使用 CDN 加速（访问最近服务器）</li>
+<li>启用 HTTP/2（多路复用，并行加载）</li>
+<li>前端自动化（gulp/webpack）</li>
 </ul>
 
       
@@ -380,13 +437,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/02/localstorage-session-cookie/">cookies、sessionStorage 和 localStorage</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/03/localstorage-session-cookie/">performance-optimization</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-07-02, 22:56:00</p>
-        <p><span>最后更新:</span>2018-07-02, 22:04:55</p>
+        <p><span>发布时间:</span>2018-07-03, 23:13:00</p>
+        <p><span>最后更新:</span>2018-07-03, 23:14:11</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/02/localstorage-session-cookie/" title="cookies、sessionStorage 和 localStorage">http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/03/localstorage-session-cookie/" title="performance-optimization">http://www.mandywu.xyz/2018/07/03/localstorage-session-cookie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/03/localstorage-session-cookie/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -400,8 +457,8 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/01/FE-Interview-Questions-jQuery/">
-                    FE-Interview-Questions-jQuery
+                <a href="/2018/07/03/性能优化/">
+                    
                 </a>
             </div>
         
@@ -413,7 +470,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookies、sessionStorage-和-localStorage"><span class="toc-number">1.</span> <span class="toc-text">cookies、sessionStorage 和 localStorage</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#性能优化"><span class="toc-number">1.</span> <span class="toc-text">性能优化</span></a></li></ol>
         
     </div>
     <style>
@@ -449,7 +506,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"cookies、sessionStorage 和 localStorage　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"performance-optimization　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -468,8 +525,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/07/02/localstorage-session-cookie/';
-            this.page.identifier = '2018/07/02/localstorage-session-cookie/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/03/localstorage-session-cookie/';
+            this.page.identifier = '2018/07/03/localstorage-session-cookie/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -497,13 +554,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/07/01/FE-Interview-Questions-jQuery/" title="下一篇: FE-Interview-Questions-jQuery">
+            <a href="/2018/07/03/性能优化/" title="下一篇: ">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/localstorage-session-cookie/">cookies、sessionStorage 和 localStorage</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-jQuery/">FE-Interview-Questions-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-HTTP/">FE-Interview-Questions-HTTP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">根据resume做出的总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/localstorage-session-cookie/">performance-optimization</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/性能优化/">性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-jQuery/">jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-HTTP/">HTTP + TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">Html + Css + Js</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
 
 
 
