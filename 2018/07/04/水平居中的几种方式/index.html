@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="前期准备： 1. 有自己的github账号； 2. 配置环境：电脑已安装node ； hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具 官网： http://hexo.io ...">
-<meta name="keywords" content="hexo,gitHub,blog">
+<meta name="description" content="实现水平居中常用的几种方式，flex，margin auto，transform translate...">
+<meta name="keywords" content="resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用gitHub+Hexo搭建个人博客">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/index.html">
+<meta property="og:title" content="水平居中的几种方式">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/04/水平居中的几种方式/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="前期准备： 1. 有自己的github账号； 2. 配置环境：电脑已安装node ； hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具 官网： http://hexo.io ...">
+<meta property="og:description" content="实现水平居中常用的几种方式，flex，margin auto，transform translate...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/hexo.jpg">
-<meta property="og:updated_time" content="2018-05-23T12:01:40.836Z">
+<meta property="og:updated_time" content="2018-07-04T15:53:38.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用gitHub+Hexo搭建个人博客">
-<meta name="twitter:description" content="前期准备： 1. 有自己的github账号； 2. 配置环境：电脑已安装node ； hexo Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具 官网： http://hexo.io ...">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/hexo.jpg">
+<meta name="twitter:title" content="水平居中的几种方式">
+<meta name="twitter:description" content="实现水平居中常用的几种方式，flex，margin auto，transform translate...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>利用gitHub+Hexo搭建个人博客 | mandy&#39;blog</title>
+<title>水平居中的几种方式 | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -269,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-利用gitHub-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-水平居中的几种方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" class="article-date">
-      <time datetime="2018-05-21T13:45:58.000Z" itemprop="datePublished">2018-05-21</time>
+      <a href="/2018/07/04/水平居中的几种方式/" class="article-date">
+      <time datetime="2018-07-04T15:51:00.000Z" itemprop="datePublished">2018-07-04</time>
 </a>
 
 
@@ -288,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      利用gitHub+Hexo搭建个人博客
+      水平居中的几种方式
     </h1>
   
 
@@ -296,14 +294,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo搭建博客/">Hexo搭建博客</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -313,48 +307,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>前期准备：</p>
-<ol>
-<li>有自己的github账号；</li>
-<li>配置环境：电脑已安装node ；</li>
-</ol>
-<p>hexo<br>Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具</p>
-<p>官网： <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a> </p>
-<p><strong>安装hexo</strong><br>第1步：<br>在自己认为合适的地方新建文件夹（一般为自己放code的文件），此文件夹是用于管理自己的博客文档，打开文件夹，单击右键，选择git bash,命令行中输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>备注：也可不用git bash, win+R 输入cmd打开命令行也OK</p>
-<p>第2步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>第3步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog(cd你的文件夹位置 //比如cd [blog] 我的文件夹名字就叫:[blog])</span><br></pre></td></tr></table></figure>
-<p>第4步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>第5步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server  开启本地服务器，默认会在http://localhost:4000/打开</span><br></pre></td></tr></table></figure>
-<p>打开此链接，会出现如下图所示内容：<br><img src="/2018/05/21/利用gitHub-Hexo搭建个人博客/hexo.jpg" alt="这里写图片描述"></p>
-<p><strong>将hexo与本人github联系起来：</strong><br>具体可参考hexo官网：<br>hexo官网 –&gt;Docs–&gt;  Deployment –&gt;Git</p>
-<p>接着上述步骤<br>第6步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl C 关闭本地服务器</span><br></pre></td></tr></table></figure>
-<p>第7步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>第8步：<br>在新建文件夹中的blog里config.yml里配置deploy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">depploy:</span><br><span class="line">	type:git</span><br><span class="line">	repo:&lt;repositpry url&gt; //github上博客地址，新建repository课命名为blog，复制blog链接到此处</span><br><span class="line">	branch：master</span><br><span class="line">	message：[message] //删除不写</span><br></pre></td></tr></table></figure>
-<p>注意：config.yml中root的配置（会影响博客只显示文字 不呈现样式）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root：blog // 但如果是解析到自己的域名下了，则url和root都默认不写</span><br></pre></td></tr></table></figure>
-<p>第9步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g  //生成本地发布文件夹</span><br><span class="line">hexo d  //部署到github上</span><br><span class="line">//也可合并写成一个步骤：hexo d -g</span><br></pre></td></tr></table></figure>
-<p><strong>怎样编辑文档发布自己的博客呢</strong></p>
-<p>新建一篇博客，执行下面命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;article title&apos;</span><br></pre></td></tr></table></figure>
-<p>这时候在最初新建文件夹的\source\ _posts 将会看到 article title.md 文件</p>
-<p>用编辑器打开就可以编辑文章了。文章编辑好之后，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g //在部署前先生成</span><br></pre></td></tr></table></figure>
-<p>注意：</p>
-<ol>
-<li>若提示报错<code>deloyer not found:git</code></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html--&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">	     &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-水平居中的-margin：0-auto"><a href="#1-水平居中的-margin：0-auto" class="headerlink" title="1.水平居中的 margin：0 auto;"></a>1.水平居中的 margin：0 auto;</h2><p>用于子元素上的，前提是不受float影响</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        padding: 0;</span><br><span class="line">        margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            border: 3px solid red;</span><br><span class="line">            /*text-align: center;*/</span><br><span class="line">        &#125;</span><br><span class="line">        .box img&#123;</span><br><span class="line">            display: block;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-水平居中-text-align：center；"><a href="#2-水平居中-text-align：center；" class="headerlink" title="2.水平居中 text-align：center；"></a>2.水平居中 text-align：center；</h2><p>img的display：block；类似一样在不受float影响下进行<br>在父元素上添加效果让它进行水平居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        padding: 0;</span><br><span class="line">        margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            border: 3px solid red;</span><br><span class="line">            /*text-align: center;*/</span><br><span class="line">        &#125;</span><br><span class="line">        .box img&#123;</span><br><span class="line">            display: block;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半"><a href="#3-水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半" class="headerlink" title="3.水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半"></a>3.水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半</h2><p>需要知道需要垂直居中的宽高才能实现，经常使用这种方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background:#e9dfc7; </span><br><span class="line">            border:1px solid red;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line">       .box img&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 150px;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 50%;</span><br><span class="line">            left: 50%;</span><br><span class="line">            margin-top: -75px;</span><br><span class="line">            margin-left: -50px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-水平垂直居中（二）定位和margin-auto"><a href="#4-水平垂直居中（二）定位和margin-auto" class="headerlink" title="4.水平垂直居中（二）定位和margin:auto;"></a>4.水平垂直居中（二）定位和margin:auto;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background:#e9dfc7; </span><br><span class="line">            border:1px solid red;</span><br><span class="line">            position: relative;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .box img&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="5-水平垂直居中（三）绝对定位和transfrom"><a href="#5-水平垂直居中（三）绝对定位和transfrom" class="headerlink" title="5.水平垂直居中（三）绝对定位和transfrom"></a>5.水平垂直居中（三）绝对定位和transfrom</h2><p>元素宽高未知时常用，已知也可用，因逼格很高 ~~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        padding: 0;</span><br><span class="line">        margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .box&#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 300px;</span><br><span class="line">        background:#e9dfc7; </span><br><span class="line">        border:1px solid red;</span><br><span class="line">        position: relative;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .box img&#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 50%;</span><br><span class="line">        left: 50%;</span><br><span class="line">        transform: translate(-50%,-50%);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="6-水平垂直居中（四）diplay：table-cell"><a href="#6-水平垂直居中（四）diplay：table-cell" class="headerlink" title="6.水平垂直居中（四）diplay：table-cell"></a>6.水平垂直居中（四）diplay：table-cell</h2><p>利用表格的样式来进行居中，很方便</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background:#e9dfc7; </span><br><span class="line">            border:1px solid red;</span><br><span class="line">            display: table-cell;</span><br><span class="line">            vertical-align: middle;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .box img&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 150px;</span><br><span class="line">            /*margin: 0 auto;*/  这个也行</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="7-水平垂直居中（五）flexBox居中"><a href="#7-水平垂直居中（五）flexBox居中" class="headerlink" title="7.水平垂直居中（五）flexBox居中"></a>7.水平垂直居中（五）flexBox居中</h2><p>利用CSS3属性flex布局,非常方便快捷，在移动端使用完美，pc端有兼容性问题，以后会成为主流</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .box&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background:#e9dfc7; </span><br><span class="line">            border:1px solid red;</span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            align-items:center;</span><br><span class="line">        &#125;</span><br><span class="line">        .box img&#123;</span><br><span class="line">            width: 150px;</span><br><span class="line">            height: 100px;</span><br><span class="line">        &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -362,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/04/水平居中的几种方式/">水平居中的几种方式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-05-21, 21:45:58</p>
-        <p><span>最后更新:</span>2018-05-23, 20:01:40</p>
+        <p><span>发布时间:</span>2018-07-04, 23:51:00</p>
+        <p><span>最后更新:</span>2018-07-04, 23:53:38</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/" title="利用gitHub+Hexo搭建个人博客">http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/04/水平居中的几种方式/" title="水平居中的几种方式">http://www.mandywu.xyz/2018/07/04/水平居中的几种方式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/04/水平居中的几种方式/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -380,16 +346,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/05/23/Markdown-简要语法/">
-                    Markdown 简要语法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/18/hello-world/">
-                    Hello World
+                <a href="/2018/07/03/localstorage-session-cookie/">
+                    performance-optimization
                 </a>
             </div>
         
@@ -401,7 +361,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-水平居中的-margin：0-auto"><span class="toc-number">1.</span> <span class="toc-text">1.水平居中的 margin：0 auto;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-水平居中-text-align：center；"><span class="toc-number">2.</span> <span class="toc-text">2.水平居中 text-align：center；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半"><span class="toc-number">3.</span> <span class="toc-text">3.水平垂直居中（一）定位和需要定位的元素的margin减去宽高的一半</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-水平垂直居中（二）定位和margin-auto"><span class="toc-number">4.</span> <span class="toc-text">4.水平垂直居中（二）定位和margin:auto;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-水平垂直居中（三）绝对定位和transfrom"><span class="toc-number">5.</span> <span class="toc-text">5.水平垂直居中（三）绝对定位和transfrom</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-水平垂直居中（四）diplay：table-cell"><span class="toc-number">6.</span> <span class="toc-text">6.水平垂直居中（四）diplay：table-cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-水平垂直居中（五）flexBox居中"><span class="toc-number">7.</span> <span class="toc-text">7.水平垂直居中（五）flexBox居中</span></a></li></ol>
         
     </div>
     <style>
@@ -437,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"利用gitHub+Hexo搭建个人博客　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"水平居中的几种方式　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -456,8 +416,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/05/21/利用gitHub-Hexo搭建个人博客/';
-            this.page.identifier = '2018/05/21/利用gitHub-Hexo搭建个人博客/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/04/水平居中的几种方式/';
+            this.page.identifier = '2018/07/04/水平居中的几种方式/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -479,15 +439,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/05/23/Markdown-简要语法/" title="上一篇: Markdown 简要语法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/05/18/hello-world/" title="下一篇: Hello World">
+            <a href="/2018/07/03/localstorage-session-cookie/" title="下一篇: performance-optimization">
                 <i class="fa fa-angle-right"></i>
             </a>
         
