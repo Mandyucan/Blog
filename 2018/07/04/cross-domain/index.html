@@ -15,22 +15,18 @@
 
 
 
-<meta name="description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
-<meta name="keywords" content="CSS">
+<meta name="description" content="原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入，由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求...">
+<meta name="keywords" content="resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css样式表里面引用background-image时，url路径错误原因及解决方法">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/index.html">
+<meta property="og:title" content="cross-domain">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/04/cross-domain/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
+<meta property="og:description" content="原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入，由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/2.png">
-<meta property="og:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/3.png">
-<meta property="og:updated_time" content="2018-06-09T15:54:01.020Z">
+<meta property="og:updated_time" content="2018-07-05T15:20:53.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css样式表里面引用background-image时，url路径错误原因及解决方法">
-<meta name="twitter:description" content="一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题">
-<meta name="twitter:image" content="http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png">
+<meta name="twitter:title" content="cross-domain">
+<meta name="twitter:description" content="原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入，由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>css样式表里面引用background-image时，url路径错误原因及解决方法 | mandy&#39;blog</title>
+<title>cross-domain | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css样式表里面引用background-image时，url路径错误原因及解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-cross-domain" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" class="article-date">
-      <time datetime="2018-06-04T07:47:00.000Z" itemprop="datePublished">2018-06-04</time>
+      <a href="/2018/07/04/cross-domain/" class="article-date">
+      <time datetime="2018-07-04T15:18:00.000Z" itemprop="datePublished">2018-07-04</time>
 </a>
 
 
@@ -290,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css样式表里面引用background-image时，url路径错误原因及解决方法
+      cross-domain
     </h1>
   
 
@@ -301,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -311,15 +307,48 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>一直对css中background-image：url的路径问题存在误解，半知半解的，有时候路径写的对，有时候又是错的，完全碰运气，今天写resume时又遇到这个问题，在此整理下：<br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/1.png" alt="这里写图片描述"><br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/2.png" alt="这里写图片描述"><br><img src="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/3.png" alt="这里写图片描述"></p>
-<p>css样式表中background-image要引入image文件夹下的<code>portrait.jpg</code>图片，</p>
-<p>正确的写法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(&apos;../image/portrait.jpg&apos;);</span><br></pre></td></tr></table></figure>
-<h2 id="误区："><a href="#误区：" class="headerlink" title="误区："></a>误区：</h2><p>一直以为，当在html中引用外部样式表后，那么在样式表文件中定义的样式就相当于在html头文件中定义的样式了，相对路径以html为参考。但事实是，它依然存放在定义的文件中被一起下载到客户端。在定义url时，如果是绝对地址没什么问题，如果是相对地址，那么，<strong>一定要相对css/style.css所在的路径，而不必考虑即将引用它的html文件的路径。</strong></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.相对路径（相对于html）<br>在html的头部写样式，就可以相对于html文件的图片的路径了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        </span><br><span class="line">    .portrait &#123;</span><br><span class="line">        background-image: url(&apos;./static/image/portrait.jpg&apos;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-<p>2.相对路径（外部引入css样式表，相对于style.css引入）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image:url(&apos;../image/portrait.jpg&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>3.绝对路径（比如<code>f:/resume/static/image/portrait.jpg</code>(这种方式理论上是可以的，但一般不采用）</p>
+        <h3 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题"></a>如何解决跨域问题</h3><hr>
+<p><strong>JSONP：</strong></p>
+<ul>
+<li>原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入</li>
+<li>由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求</li>
+<li><p>优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求</p>
+</li>
+<li><p>JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function createJs(sUrl)&#123;</span><br><span class="line"></span><br><span class="line">        var oScript = document.createElement(&apos;script&apos;);</span><br><span class="line">        oScript.type = &apos;text/javascript&apos;;</span><br><span class="line">        oScript.src = sUrl;</span><br><span class="line">        document.getElementsByTagName(&apos;head&apos;)[0].appendChild(oScript);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    createJs(&apos;jsonp.js&apos;);</span><br><span class="line"></span><br><span class="line">    box(&#123;</span><br><span class="line">       &apos;name&apos;: &apos;test&apos;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    function box(json)&#123;</span><br><span class="line">        alert(json.name);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>CORS</strong></p>
+<ul>
+<li>服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问</li>
+</ul>
+<p><strong>通过修改document.domain来跨子域</strong></p>
+<ul>
+<li>将子域和主域的document.domain设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域。主域相同的使用document.domain</li>
+</ul>
+<p><strong>使用window.name来进行跨域</strong></p>
+<ul>
+<li>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的</li>
+</ul>
+<p><strong>使用HTML5中新引进的window.postMessage方法来跨域传送数据</strong></p>
+<ul>
+<li>还有flash、在服务器上设置代理页面等跨域方式。个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法</li>
+</ul>
+<p><strong>如何解决跨域问题?</strong></p>
+<ul>
+<li><p>jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</p>
+</li>
+<li><p>如何解决跨域问题?</p>
+<ul>
+<li>document.domain + iframe：要求主域名相同 //只能跨子域</li>
+<li>JSONP(JSON with Padding)：response: callback(data) //只支持 GET 请求</li>
+<li>跨域资源共享CORS(XHR2)：Access-Control-Allow //兼容性 IE10+</li>
+<li>跨文档消息传输(HTML5)：postMessage + onmessage  //兼容性 IE8+</li>
+<li>WebSocket(HTML5)：new WebSocket(url) + onmessage //兼容性 IE10+</li>
+<li>服务器端设置代理请求：服务器端不受同源策略限制</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -328,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/04/cross-domain/">cross-domain</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-04, 15:47:00</p>
-        <p><span>最后更新:</span>2018-06-09, 23:54:01</p>
+        <p><span>发布时间:</span>2018-07-04, 23:18:00</p>
+        <p><span>最后更新:</span>2018-07-05, 23:20:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="css样式表里面引用background-image时，url路径错误原因及解决方法">http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/04/cross-domain/" title="cross-domain">http://www.mandywu.xyz/2018/07/04/cross-domain/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/04/cross-domain/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,15 +376,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/09/vue实现饿了么外卖系统/">
-                    vue实现饿了么外卖系统（完整开发流程）
+                <a href="/2018/07/04/水平居中的几种方式/">
+                    水平居中的几种方式
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">
-                    git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）
+                <a href="/2018/07/03/localstorage-session-cookie/">
+                    performance-optimization
                 </a>
             </div>
         
@@ -367,7 +396,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#误区："><span class="toc-number">1.</span> <span class="toc-text">误区：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">2.</span> <span class="toc-text">解决方法</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决跨域问题"><span class="toc-number">1.</span> <span class="toc-text">如何解决跨域问题</span></a></li></ol>
         
     </div>
     <style>
@@ -403,7 +432,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"css样式表里面引用background-image时，url路径错误原因及解决方法　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"cross-domain　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,8 +451,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/';
-            this.page.identifier = '2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/04/cross-domain/';
+            this.page.identifier = '2018/07/04/cross-domain/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -445,7 +474,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/09/vue实现饿了么外卖系统/" title="上一篇: vue实现饿了么外卖系统（完整开发流程）">
+            <a href="/2018/07/04/水平居中的几种方式/" title="上一篇: 水平居中的几种方式">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -453,7 +482,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/" title="下一篇: git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）">
+            <a href="/2018/07/03/localstorage-session-cookie/" title="下一篇: performance-optimization">
                 <i class="fa fa-angle-right"></i>
             </a>
         
