@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="zh-Hans en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Mandy" />
+
+
+
+<meta name="description" content="front-end知识点总结...">
+<meta name="keywords" content="resume">
+<meta property="og:type" content="article">
+<meta property="og:title" content="conclusion（三）">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/06/conclusion（三）/index.html">
+<meta property="og:site_name" content="mandy&#39;blog">
+<meta property="og:description" content="front-end知识点总结...">
+<meta property="og:locale" content="zh-Hans en">
+<meta property="og:updated_time" content="2018-07-06T13:50:09.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="conclusion（三）">
+<meta name="twitter:description" content="front-end知识点总结...">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="mandy&#39;blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>conclusion（三） | mandy&#39;blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Mandy</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/随笔/">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:mandyucan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Mandyucan" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" href="https://blog.csdn.net/Mandyucan" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resume/">resume</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化-javascript/">性能优化 javascript</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱前端 专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Mandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Mandy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/随笔/">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:mandyucan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Mandyucan" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/Mandyucan" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-conclusion（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/06/conclusion（三）/" class="article-date">
+      <time datetime="2018-07-06T13:40:00.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      conclusion（三）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>JavaScript有几种类型的值？，你能画一下他们的内存图吗？</strong></p>
+<ul>
+<li>栈：原始数据类型（Undefined，Null，Boolean，Number、String）</li>
+<li><p>堆：引用数据类型（对象、数组和函数）</p>
+</li>
+<li><p>两种类型的区别是：存储位置不同；</p>
+<ul>
+<li>原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；</li>
+</ul>
+</li>
+<li><p>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体</p>
+</li>
+</ul>
+<p><strong>如何将字符串转化为数字，例如’12.3b’?</strong></p>
+<ul>
+<li>parseFloat(‘12.3b’);</li>
+<li>正则表达式，’12.3b’.match(/(\d)+(.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已</li>
+</ul>
+<p><strong>如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function commafy(num)&#123;</span><br><span class="line">	return num &amp;&amp; num</span><br><span class="line">		.toString()</span><br><span class="line">		.replace(/(\d)(?=(\d&#123;3&#125;)+\.)/g, function($1, $2)&#123;</span><br><span class="line">			return $2 + &apos;,&apos;;</span><br><span class="line">		&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如何实现数组的随机排序？</strong></p>
+<ul>
+<li>方法一：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randSort1</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = arr.length;i &lt; len; i++ )&#123;</span><br><span class="line">		<span class="keyword">var</span> rand = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*len);</span><br><span class="line">		<span class="keyword">var</span> temp = arr[rand];</span><br><span class="line">		arr[rand] = arr[i];</span><br><span class="line">		arr[i] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(randSort1(arr));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randSort2</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> mixedArray = [];</span><br><span class="line">	<span class="keyword">while</span>(arr.length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">var</span> randomIndex = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*arr.length);</span><br><span class="line">		mixedArray.push(arr[randomIndex]);</span><br><span class="line">		arr.splice(randomIndex, <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mixedArray;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(randSort2(arr));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法三：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<p><strong>Javascript如何实现继承？</strong></p>
+<ul>
+<li>构造继承</li>
+<li>原型继承</li>
+<li>实例继承</li>
+<li><p>拷贝继承</p>
+</li>
+<li><p>原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'wang'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.age = <span class="number">28</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent();<span class="comment">//继承了Parent，通过原型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> Child();</span><br><span class="line">alert(demo.age);</span><br><span class="line">alert(demo.name);<span class="comment">//得到被继承的属性</span></span><br></pre></td></tr></table></figure>
+<p><strong>javascript创建对象的几种方式？</strong></p>
+<ul>
+<li><p>javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用</p>
+</li>
+<li><p>1、对象字面量的方式</p>
+<ul>
+<li><code>person={firstname:&quot;Mark&quot;,lastname:&quot;Yun&quot;,age:25,eyecolor:&quot;black&quot;};</code></li>
+</ul>
+</li>
+<li><p>2、用function来模拟无参的构造函数</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;&#125;</span><br><span class="line">//定义一个function，如果使用new&quot;实例化&quot;,该function可以看作是一个Class</span><br><span class="line">person.name=&quot;Mark&quot;;</span><br><span class="line">var person=new Person();</span><br><span class="line">person.age=&quot;25&quot;;</span><br><span class="line">person.work=function()&#123;</span><br><span class="line">alert(person.name+&quot; hello...&quot;);</span><br><span class="line">&#125;</span><br><span class="line">person.work();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3、用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Pet(name,age,hobby)&#123;</span><br><span class="line">   this.name=name;//this作用域：当前对象</span><br><span class="line">   this.age=age;</span><br><span class="line">   this.hobby=hobby;</span><br><span class="line">   this.eat=function()&#123;</span><br><span class="line">      alert(&quot;我叫&quot;+this.name+&quot;,我喜欢&quot;+this.hobby+&quot;,是个程序员&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">var maidou =new Pet(&quot;麦兜&quot;,25,&quot;coding&quot;);//实例化、创建对象</span><br><span class="line">maidou.eat();//调用eat方法</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4、用工厂方式来创建（内置对象）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var wcDog =new Object();</span><br><span class="line"> wcDog.name=&quot;旺财&quot;;</span><br><span class="line"> wcDog.age=3;</span><br><span class="line"> wcDog.work=function()&#123;</span><br><span class="line">   alert(&quot;我是&quot;+wcDog.name+&quot;,汪汪汪......&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> wcDog.work();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5、用原型方式来创建</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Dog()&#123;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> Dog.prototype.name=&quot;旺财&quot;;</span><br><span class="line"> Dog.prototype.eat=function()&#123;</span><br><span class="line"> alert(this.name+&quot;是个吃货&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> var wangcai =new Dog();</span><br><span class="line"> wangcai.eat();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、用混合方式来创建</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Car(name,price)&#123;</span><br><span class="line">  this.name=name;</span><br><span class="line">  this.price=price;</span><br><span class="line">&#125;</span><br><span class="line"> Car.prototype.sell=function()&#123;</span><br><span class="line">   alert(&quot;我是&quot;+this.name+&quot;，我现在卖&quot;+this.price+&quot;万元&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">var camry =new Car(&quot;凯美瑞&quot;,27);</span><br><span class="line">camry.sell();</span><br></pre></td></tr></table></figure>
+<p><strong>Javascript作用链域?</strong></p>
+<ul>
+<li>全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。</li>
+<li>当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找，直至全局函数，这种组织形式就是作用域链</li>
+</ul>
+<p><strong>谈谈This对象的理解。</strong></p>
+<ul>
+<li>this总是指向函数的直接调用者（而非间接调用者）；</li>
+<li>如果有new关键字，this指向new出来的那个对象；</li>
+<li>在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window</li>
+</ul>
+<p><strong>eval是做什么的？</strong></p>
+<ul>
+<li>它的功能是把对应的字符串解析成JS代码并运行；</li>
+<li>应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）</li>
+<li>由JSON字符串转换为JSON对象的时候可以用eval，var obj =eval(‘(‘+ str +’)’);</li>
+</ul>
+<p><strong>什么是window对象? 什么是document对象?</strong></p>
+<ul>
+<li>window对象是指浏览器打开的窗口。</li>
+<li>document对象是Documentd对象（HTML 文档对象）的一个只读引用，window对象的一个属性</li>
+</ul>
+<p><strong>null，undefined 的区别？</strong></p>
+<ul>
+<li>null         表示一个对象是“没有值”的值，也就是值为“空”；</li>
+<li><p>undefined     表示一个变量声明了没有初始化(赋值)；</p>
+</li>
+<li><p>undefined不是一个有效的JSON，而null是；</p>
+</li>
+<li>undefined的类型(typeof)是undefined；</li>
+<li>null的类型(typeof)是object；</li>
+</ul>
+<ul>
+<li>Javascript将未赋值的变量默认值设为undefined；</li>
+<li>Javascript从来不会将变量设为null。它是用来让程序员表明某个用var声明的变量时没有值的</li>
+</ul>
+<ul>
+<li><p>typeof undefined</p>
+<ul>
+<li>undefined :<ul>
+<li>是一个表示”无”的原始值或者说表示”缺少值”，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined；</li>
+<li>例如变量被声明了，但没有赋值时，就等于undefined</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>typeof null //“object”</p>
+<ul>
+<li>null : 是一个对象(空对象, 没有任何属性和方法)；</li>
+<li>例如作为函数的参数，表示该函数的参数不是对象；</li>
+</ul>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined</li>
+<li>null == undefined // true</li>
+<li>null === undefined // false</li>
+</ul>
+</li>
+</ul>
+<p><strong>写一个通用的事件侦听器函数。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">// event(事件)工具集，来源：github.com/markyun</span><br><span class="line">markyun.Event = &#123;</span><br><span class="line">	// 页面加载完成后</span><br><span class="line">	readyEvent : function(fn) &#123;</span><br><span class="line">		if (fn==null) &#123;</span><br><span class="line">			fn=document;</span><br><span class="line">		&#125;</span><br><span class="line">		var oldonload = window.onload;</span><br><span class="line">		if (typeof window.onload != &apos;function&apos;) &#123;</span><br><span class="line">			window.onload = fn;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			window.onload = function() &#123;</span><br><span class="line">				oldonload();</span><br><span class="line">				fn();</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span><br><span class="line">	// 参数： 操作的元素,事件名称 ,事件处理程序</span><br><span class="line">	addEvent : function(element, type, handler) &#123;</span><br><span class="line">		if (element.addEventListener) &#123;</span><br><span class="line">			//事件类型、需要执行的函数、是否捕捉</span><br><span class="line">			element.addEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.attachEvent) &#123;</span><br><span class="line">			element.attachEvent(&apos;on&apos; + type, function() &#123;</span><br><span class="line">				handler.call(element);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&apos;on&apos; + type] = handler;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 移除事件</span><br><span class="line">	removeEvent : function(element, type, handler) &#123;</span><br><span class="line">		if (element.removeEventListener) &#123;</span><br><span class="line">			element.removeEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.datachEvent) &#123;</span><br><span class="line">			element.detachEvent(&apos;on&apos; + type, handler);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&apos;on&apos; + type] = null;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span><br><span class="line">	stopPropagation : function(ev) &#123;</span><br><span class="line">		if (ev.stopPropagation) &#123;</span><br><span class="line">			ev.stopPropagation();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			ev.cancelBubble = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 取消事件的默认行为</span><br><span class="line">	preventDefault : function(event) &#123;</span><br><span class="line">		if (event.preventDefault) &#123;</span><br><span class="line">			event.preventDefault();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			event.returnValue = false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取事件目标</span><br><span class="line">	getTarget : function(event) &#123;</span><br><span class="line">		return event.target || event.srcElement;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span><br><span class="line">	getEvent : function(e) &#123;</span><br><span class="line">		var ev = e || window.event;</span><br><span class="line">		if (!ev) &#123;</span><br><span class="line">			var c = this.getEvent.caller;</span><br><span class="line">			while (c) &#123;</span><br><span class="line">				ev = c.arguments[0];</span><br><span class="line">				if (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				c = c.caller;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return ev;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>[“1”, “2”, “3”].map(parseInt) 答案是多少？</strong></p>
+<ul>
+<li>parseInt() 函数能解析一个字符串，并返回一个整数，需要两个参数 (val, radix)，其中 radix 表示要解析的数字的基数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function parseInt(str, radix) &#123;</span><br><span class="line">    return str+&apos;-&apos;+radix;</span><br><span class="line">&#125;;</span><br><span class="line">var a=[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;];</span><br><span class="line">a.map(parseInt);  // [&quot;1-0&quot;, &quot;2-1&quot;, &quot;3-2&quot;] 不能大于radix</span><br></pre></td></tr></table></figure>
+<ul>
+<li>因为二进制里面，没有数字3,导致出现超范围的radix赋值和不合法的进制解析，才会返回NaN所以[“1”, “2”, “3”].map(parseInt) 答案也就是：[1, NaN, NaN]</li>
+</ul>
+<p><strong>事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？</strong></p>
+<ul>
+<li>我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为</li>
+<li>事件处理机制：IE是事件冒泡、Firefox同时支持两种事件模型，也就是：捕获型事件和冒泡型事件</li>
+<li>ev.stopPropagation();（旧ie的方法 ev.cancelBubble = true;）</li>
+</ul>
+<p><strong>什么是闭包（closure），为什么要用它？</strong></p>
+<ul>
+<li><p>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部</p>
+</li>
+<li><p>闭包的特性：</p>
+<ul>
+<li>函数内再嵌套函数</li>
+<li>内部函数可以引用外层的参数和变量</li>
+<li>参数和变量不会被垃圾回收机制回收</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//li节点的onclick事件都能正确的弹出当前被点击的li索引</span><br><span class="line"> &lt;ul id=&quot;testUL&quot;&gt;</span><br><span class="line">    &lt;li&gt; index = 0&lt;/li&gt;</span><br><span class="line">    &lt;li&gt; index = 1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt; index = 2&lt;/li&gt;</span><br><span class="line">    &lt;li&gt; index = 3&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  	var nodes = document.getElementsByTagName(&quot;li&quot;);</span><br><span class="line">	for(i = 0;i&lt;nodes.length;i+= 1)&#123;</span><br><span class="line">	    nodes[i].onclick = (function(i)&#123;</span><br><span class="line">	              return function() &#123;</span><br><span class="line">	                 console.log(i);</span><br><span class="line">	              &#125; //不用闭包的话，值每次都是4</span><br><span class="line">	            &#125;)(i);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在</li>
+<li>使得Javascript的垃圾回收机制GC不会收回say667()所占用的资源</li>
+<li>因为say667()的内部函数的执行需要依赖say667()中的变量</li>
+<li>这是对闭包作用的非常直白的描述</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function say667() &#123;</span><br><span class="line">	// Local variable that ends up within closure</span><br><span class="line">	var num = 666;</span><br><span class="line">	var sayAlert = function() &#123;</span><br><span class="line">		alert(num);</span><br><span class="line">	&#125;</span><br><span class="line">	num++;</span><br><span class="line">	return sayAlert;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> var sayAlert = say667();</span><br><span class="line"> sayAlert()//执行结果应该弹出的667</span><br></pre></td></tr></table></figure>
+<p><strong>javascript 代码中的”use strict”;是什么意思 ? 使用它区别是什么？</strong></p>
+<ul>
+<li>use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</li>
+<li>使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。</li>
+<li>默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;</li>
+<li>全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;</li>
+<li>提高编译器效率，增加运行速度；为未来新版本的Javascript标准化做铺垫。</li>
+</ul>
+<p><strong>如何判断一个对象是否属于某个类？</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(a instanceof Person)&#123;</span><br><span class="line">       alert(&apos;yes&apos;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>new操作符具体干了什么呢?</strong></p>
+<ul>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure>
+<p><strong>Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</strong></p>
+<ul>
+<li>javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员</li>
+<li>使用方法： object.hasOwnProperty(proName)</li>
+<li>其中参数object是必选项。一个对象的实例。</li>
+<li>proName是必选项。一个属性名称的字符串值。</li>
+<li>如果 object 具有指定名称的属性，那么JavaScript中hasOwnProperty函数方法返回 true，反之则返回 false。</li>
+</ul>
+<p><strong>JSON 的了解？</strong></p>
+<ul>
+<li>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</li>
+<li>它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小</li>
+<li>如：{“age”:”12”, “name”:”back”}</li>
+<li>JSON字符串转换为JSON对象:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj =eval(&apos;(&apos;+ str +&apos;)&apos;);</span><br><span class="line">var obj = str.parseJSON();</span><br><span class="line">var obj = JSON.parse(str);</span><br><span class="line"></span><br><span class="line">JSON对象转换为JSON字符串：</span><br><span class="line">var last=obj.toJSONString();</span><br><span class="line">var last=JSON.stringify(obj);</span><br></pre></td></tr></table></figure>
+<p><strong>js延迟加载的方式有哪些？</strong></p>
+<ul>
+<li>defer和async、动态创建DOM方式（用得最多）、按需异步载入js</li>
+</ul>
+<p><strong>Ajax 是什么? 如何创建一个Ajax？</strong></p>
+<ul>
+<li>ajax的全称：Asynchronous Javascript And XML。</li>
+<li>异步传输+js+xml</li>
+<li><p>所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验</p>
+</li>
+<li><p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象</p>
+</li>
+<li>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息</li>
+<li>(3)设置响应HTTP请求状态变化的函数</li>
+<li>(4)发送HTTP请求</li>
+<li>(5)获取异步调用返回的数据</li>
+<li>(6)使用JavaScript和DOM实现局部刷新</li>
+</ul>
+<p><strong>Ajax 解决浏览器缓存问题？</strong></p>
+<ul>
+<li><p>1、在ajax发送请求前加上      anyAjaxObj.setRequestHeader(“If-Modified-Since”,”0”)。</p>
+</li>
+<li><p>2、在ajax发送请求前加上    anyAjaxObj.setRequestHeader(“Cache-Control”,”no-cache”)。</p>
+</li>
+<li><p>3、在URL后面加上一个随机数： “fresh=” + Math.random();。</p>
+</li>
+<li><p>4、在URL后面加上时间搓：”nowtime=” + new Date().getTime();。</p>
+</li>
+<li><p>5、如果是使用jQuery，直接这样就可以了    $.ajaxSetup({cache:false})。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录</p>
+</li>
+</ul>
+<p><strong>同步和异步的区别?</strong></p>
+<ul>
+<li>同步的概念应该是来自于OS中关于同步的概念:不同进程为协同完成某项工作而在先后次序上调整(通过阻塞,唤醒等方式).同步强调的是顺序性.谁先谁后.异步则不存在这种顺序性.</li>
+<li>同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作</li>
+<li>异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容</li>
+</ul>
+<p><strong>如何解决跨域问题?</strong></p>
+<ul>
+<li>jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</li>
+</ul>
+<p><strong>模块化开发怎么做？</strong></p>
+<ul>
+<li>不暴露私有成员</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var module1 = (function()&#123;</span><br><span class="line">　　　　var _count = 0;</span><br><span class="line">　　　　var m1 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　var m2 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　return &#123;</span><br><span class="line">　　　　　　m1 : m1,</span><br><span class="line">　　　　　　m2 : m2</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;)();</span><br></pre></td></tr></table></figure>
+<p><strong>AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？</strong></p>
+<ul>
+<li>Asynchronous Module Definition，异步模块定义，所有的模块将被异步加载，模块加载不影响后面语句运行。所有依赖某些模块的语句均放置在回调函数中</li>
+<li>区别：<ul>
+<li>对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible</li>
+<li>CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// CMD</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line">    var a = require(&apos;./a&apos;)</span><br><span class="line">    a.doSomething()</span><br><span class="line">    // 此处略去 100 行</span><br><span class="line">    var b = require(&apos;./b&apos;) // 依赖可以就近书写</span><br><span class="line">    b.doSomething()</span><br><span class="line">    // ...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// AMD 默认推荐</span><br><span class="line">define([&apos;./a&apos;, &apos;./b&apos;], function(a, b) &#123; // 依赖必须一开始就写好</span><br><span class="line">    a.doSomething()</span><br><span class="line">    // 此处略去 100 行</span><br><span class="line">    b.doSomething()</span><br><span class="line">    // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>异步加载JS的方式有哪些？</strong></p>
+<ul>
+<li><p>(1) defer，只支持IE</p>
+</li>
+<li><p>(2) async：</p>
+</li>
+<li><p>(3) 创建script，插入到DOM中，加载完毕后callBack</p>
+</li>
+</ul>
+<p><strong>documen.write和 innerHTML的区别</strong></p>
+<ul>
+<li>document.write只能重绘整个页面</li>
+<li>innerHTML可以重绘页面的一部分</li>
+</ul>
+<p><strong>DOM操作——怎样添加、移除、移动、复制、创建和查找节点?</strong></p>
+<ul>
+<li>（1）创建新节点<ul>
+<li>createDocumentFragment()    //创建一个DOM片段</li>
+<li>createElement()   //创建一个具体的元素</li>
+<li>createTextNode()   //创建一个文本节点</li>
+</ul>
+</li>
+<li>（2）添加、移除、替换、插入<ul>
+<li>appendChild()</li>
+<li>removeChild()</li>
+<li>replaceChild()</li>
+<li>insertBefore() //在已有的子节点前插入一个新的子节点</li>
+</ul>
+</li>
+<li>（3）查找<ul>
+<li>getElementsByTagName()    //通过标签名称</li>
+<li>getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)</li>
+<li>getElementById()    //通过元素Id，唯一性</li>
+</ul>
+</li>
+</ul>
+<p><strong>.call() 和 .apply() 的区别？</strong></p>
+<ul>
+<li>例子中用 add 来替换 sub，add.call(sub,3,1) == add(3,1) ，所以运行结果为：alert(4);</li>
+<li>注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function add(a,b)</span><br><span class="line">&#123;</span><br><span class="line">    alert(a+b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function sub(a,b)</span><br><span class="line">&#123;</span><br><span class="line">    alert(a-b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add.call(sub,3,1);</span><br></pre></td></tr></table></figure>
+<p><strong>jquery.extend 与 jquery.fn.extend的区别？</strong></p>
+<ul>
+<li>jquery.extend 为jquery类添加类方法，可以理解为添加静态方法</li>
+<li>jquery.fn.extend:源码中jquery.fn = jquery.prototype，所以对jquery.fn的扩展，就是为jquery类添加成员函数<pre><code>使用：
+</code></pre></li>
+<li>jquery.extend扩展，需要通过jquery类来调用，而jquery.fn.extend扩展，所有jquery实例都可以直接调用</li>
+</ul>
+<p><strong>Jquery与jQuery UI 有啥区别？</strong></p>
+<ul>
+<li>jQuery是一个js库，主要提供的功能是选择器，属性修改和事件绑定等等</li>
+<li>jQuery UI则是在jQuery的基础上，利用jQuery的扩展性，设计的插件</li>
+<li>提供了一些常用的界面元素，诸如对话框、拖动行为、改变大小行为等等</li>
+</ul>
+<p><strong>jquery 中如何将数组转化为json字符串，然后再转化回来？</strong></p>
+<ul>
+<li>jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩展：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.fn.stringifyArray = function(array) &#123;</span><br><span class="line">    return JSON.stringify(array)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$.fn.parseArray = function(array) &#123;</span><br><span class="line">    return JSON.parse(array)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">然后调用：</span><br><span class="line">$(&quot;&quot;).stringifyArray(array)</span><br></pre></td></tr></table></figure>
+<p><strong>针对 jQuery 的优化方法？</strong></p>
+<ul>
+<li>基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。</li>
+<li>频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好<ul>
+<li>比如：var str=$(“a”).attr(“href”);</li>
+</ul>
+</li>
+<li>for (var i = size; i &lt; arr.length; i++) {}<ul>
+<li>for 循环每一次循环都查找了数组 (arr) 的.length 属性，在开始循环的时候设置一个变量来存储这个数字，可以让循环跑得更快：</li>
+<li>for (var i = size, length = arr.length; i &lt; length; i++) {}</li>
+</ul>
+</li>
+</ul>
+<p><strong>如何判断当前脚本运行在浏览器还是node环境中？（阿里）</strong></p>
+<ul>
+<li>this === window ? ‘browser’ : ‘node’;</li>
+<li>通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中</li>
+</ul>
+<p><strong>jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?</strong></p>
+<ul>
+<li>jquery stop(): 如：$(“#div”).stop().animate({width:”100px”},100);</li>
+</ul>
+<p><strong>那些操作会造成内存泄漏？</strong></p>
+<ul>
+<li>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在</li>
+<li>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收</li>
+<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。<pre><code>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环)
+</code></pre></li>
+</ul>
+<p><strong>JQuery一个对象可以同时绑定多个事件，这是如何实现的？</strong></p>
+<ul>
+<li>多个事件同一个函数：<code>$(&quot;div&quot;).on(&quot;click mouseover&quot;, function(){});</code></li>
+<li>多个事件不同函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).on(&#123;</span><br><span class="line">	click: function()&#123;&#125;,</span><br><span class="line">	mouseover: function()&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>知道什么是webkit么? 知道怎么用浏览器的各种工具来调试和debug代码么?</strong></p>
+<ul>
+<li>Chrome,Safari浏览器内核</li>
+</ul>
+<p><strong>检测浏览器版本版本有哪些方式？</strong></p>
+<ul>
+<li>功能检测、userAgent特征检测</li>
+<li>比如：navigator.userAgent</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36</span><br><span class="line">		  (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>What is a Polyfill?</strong></p>
+<ul>
+<li>polyfill 是“在旧版浏览器上复制标准 API 的 JavaScript 补充”,可以动态地加载 JavaScript 代码或库，在不支持这些标准 API 的浏览器中模拟它们</li>
+<li>例如，geolocation（地理位置）polyfill 可以在 navigator 对象上添加全局的 geolocation 对象，还能添加 getCurrentPosition 函数以及“坐标”回调对象</li>
+<li>所有这些都是 W3C 地理位置 API 定义的对象和函数。因为 polyfill 模拟标准 API，所以能够以一种面向所有浏览器未来的方式针对这些 API 进行开发</li>
+<li>一旦对这些 API 的支持变成绝对大多数，则可以方便地去掉 polyfill，无需做任何额外工作。</li>
+</ul>
+<p><strong>做的项目中，有没有用过或自己实现一些 polyfill 方案（兼容性处理方案）？</strong></p>
+<ul>
+<li>比如： html5shiv、Geolocation、Placeholder</li>
+</ul>
+<p><strong>使用JS实现获取文件扩展名？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getFileExtension(filename) &#123;</span><br><span class="line">  return filename.slice((filename.lastIndexOf(&quot;.&quot;) - 1 &gt;&gt;&gt; 0) + 2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>String.lastIndexOf() </p>
+<ul>
+<li>方法返回指定值（本例中的’.’）在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。对于’filename’和’.hiddenfile’，lastIndexOf的返回值分别为0和-1无符号右移操作符(»&gt;) </li>
+<li>将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变</li>
+</ul>
+</li>
+<li><p>String.prototype.slice() </p>
+<ul>
+<li>从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为””</li>
+</ul>
+</li>
+</ul>
+<h3 id="ECMAScript6-相关"><a href="#ECMAScript6-相关" class="headerlink" title="ECMAScript6 相关"></a>ECMAScript6 相关</h3><hr>
+<p><strong>Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？</strong></p>
+<ul>
+<li>两等号判等，会在比较时进行类型转换；</li>
+<li>三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）；</li>
+<li>Object.is 在三等号判等的基础上特别处理了 NaN 、-0 和 +0 ，保证 -0 和 +0 不再相同，但 Object.is(NaN, NaN) 会返回 true</li>
+<li>Object.is 应被认为有其特殊的用途，而不能用它认为它比其它的相等对比更宽松或严格。</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/06/conclusion（三）/">conclusion（三）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
+        <p><span>发布时间:</span>2018-07-06, 21:40:00</p>
+        <p><span>最后更新:</span>2018-07-06, 21:50:09</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/06/conclusion（三）/" title="conclusion（三）">http://www.mandywu.xyz/2018/07/06/conclusion（三）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/06/conclusion（三）/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/07/06/conclusion(四)/">
+                    conclusion（四）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/07/06/conclusion（二）/">
+                    conclusion（二）
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ECMAScript6-相关"><span class="toc-number">1.</span> <span class="toc-text">ECMAScript6 相关</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"conclusion（三）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://www.mandywu.xyz/2018/07/06/conclusion（三）/';
+            this.page.identifier = '2018/07/06/conclusion（三）/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/07/06/conclusion(四)/" title="上一篇: conclusion（四）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/07/06/conclusion（二）/" title="下一篇: conclusion（二）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion(一)/">conclusion（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion(四)/">conclusion（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion（三）/">conclusion（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion（二）/">conclusion（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/cross-domain/">cross-domain</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/水平居中的几种方式/">水平居中的几种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/SEO/">前端需要注意哪些SEO</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/localstorage-session-cookie/">performance-optimization</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-HTTP/">HTTP + TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-jQuery/">jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">Html + Css + Js</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 Mandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

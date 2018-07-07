@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
-<meta name="keywords" content="vue">
+<meta name="description" content="front-end知识点总结...">
+<meta name="keywords" content="resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue实现饿了么外卖系统（完整开发流程）">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/index.html">
+<meta property="og:title" content="conclusion（四）">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/06/conclusion(四)/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
+<meta property="og:description" content="front-end知识点总结...">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-11T14:53:06.964Z">
+<meta property="og:updated_time" content="2018-07-07T16:13:55.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue实现饿了么外卖系统（完整开发流程）">
-<meta name="twitter:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
+<meta name="twitter:title" content="conclusion（四）">
+<meta name="twitter:description" content="front-end知识点总结...">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>vue实现饿了么外卖系统（完整开发流程） | mandy&#39;blog</title>
+<title>conclusion（四） | mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -267,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-vue实现饿了么外卖系统" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-conclusion(四)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/09/vue实现饿了么外卖系统/" class="article-date">
-      <time datetime="2018-06-09T15:43:00.000Z" itemprop="datePublished">2018-06-09</time>
+      <a href="/2018/07/06/conclusion(四)/" class="article-date">
+      <time datetime="2018-07-06T13:40:00.000Z" itemprop="datePublished">2018-07-06</time>
 </a>
 
 
@@ -286,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue实现饿了么外卖系统（完整开发流程）
+      conclusion（四）
     </h1>
   
 
@@ -297,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,49 +307,196 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>1.掌握vue.js项目在实战中的用<br>2.学会使用vue.js<br>3.组件化、模块化的开发方式</p>
-<h2 id="涉及知识内容"><a href="#涉及知识内容" class="headerlink" title="涉及知识内容"></a>涉及知识内容</h2><p>1.vue-cli<br>2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios<br>3.webpack构建工具<br>4.mock.ls模拟数据<br>5.es6 eslint代码风格工具（看个人需求，也可以用es5写）</p>
-<h2 id="学到什么"><a href="#学到什么" class="headerlink" title="学到什么"></a>学到什么</h2><ol>
-<li>标准开发流程，做事的方式</li>
-<li>工程化、组件化、模块化的思想</li>
-<li>移动端开发常用小技巧</li>
-<li>flex弹性布局</li>
-<li>交互设计</li>
-</ol>
-<h2 id="如何做技术选型"><a href="#如何做技术选型" class="headerlink" title="如何做技术选型"></a>如何做技术选型</h2><p><strong>多方面因素：</strong><br>一、技术方面：</p>
-<p>1.社区（是否成熟/活跃）、有问题可以找到解决方案;<br>2.开源框架的其他方面（文档更新是及时、框架轻量级）</p>
-<p>二、人才方面：</p>
-<ol>
-<li>对于新技术，开发人员上手成本<br> <strong>vue</strong>: 上手成本低，语法清晰，template模板，借鉴react虚拟dom思想、angular设计模式，数据绑定，且对细腻dom进行了优化<br> <strong>react</strong>：有自己及独特的语法==》jss语法，将html、css都写到js里面，学习成本相对较大<br> <strong>angular</strong>：后端人员写出的，借鉴后端的思想。需要懂后台语言。</li>
-</ol>
-<p>2.团队技术积累：<br>    如果团队其他人员都在用传统的开发工具,,你却用新框架，出现问题后没有其他人不能一起解决，新技术可以用，但是不能耽误最后发版影响进度。</p>
-<blockquote>
-<p>对于公司来说，上线的项目使用的技术不一定要最新最潮，但一定是最稳当的</p>
-</blockquote>
-<h2 id="vue核心思想"><a href="#vue核心思想" class="headerlink" title="vue核心思想"></a>vue核心思想</h2><p>1.数据驱动： 写vue时，一定不要有操作dom的代码出现，dom的渲染、显示、隐藏，均由数据的状态控制；<br>2.组件化：扩展html元素，封装可重复用的一个代码，和之前写的弹窗组件。翻页组件等类似</p>
-<h2 id="如何在公司中能够开发一个项目"><a href="#如何在公司中能够开发一个项目" class="headerlink" title="如何在公司中能够开发一个项目"></a>如何在公司中能够开发一个项目</h2><ul>
-<li><strong>产品给出需求文档，产品原型</strong></li>
-<li>阅读文档，梳理需求</li>
-<li>评审需求（产品逻辑、交互是否合理）</li>
-<li>UI出图，交互设计稿</li>
-<li><strong>开始做详细设计（拆分需求模块，技术选型，调研技术方案中的不确定（用什么语言，什么框架等，demo验证））</strong></li>
-<li>详细设计评审（开会决定设计是否可行）</li>
-<li>出项目排期（做详细设计时已基本预估出时间安排，所以做详细设计是很重要的）</li>
-<li>进入开发</li>
-<li>搭建项目框架</li>
-<li>模拟mock数据（mock.js模拟数据）</li>
-<li>实现页面</li>
-<li>自测（自己检测bug。逻辑等）</li>
-<li>联调（和后端人员调试）        </li>
-<li>过冒烟case（测试写的一个测试用例，自己先测试逻辑是否通顺，不通过则退回）</li>
-<li>提交测试代码，部署测试环境，测试人员接入测试</li>
-<li>改bug</li>
-<li>部署上线</li>
-<li>验证        </li>
+        <h3 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h3><p><strong>页面重构怎么操作？</strong></p>
+<ul>
+<li><p>网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。也就是说是在不改变UI的情况下，对网站进行优化，在扩展的同时保持一致的UI</p>
+</li>
+<li><p>对于传统的网站来说重构通常是：</p>
+<ul>
+<li>表格(table)布局改为DIV+CSS</li>
+<li>使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)</li>
+<li>对于移动平台的优化</li>
+<li>针对于SEO进行优化</li>
+<li><p>深层次的网站重构应该考虑的方面</p>
+</li>
+<li><p>减少代码间的耦合</p>
+</li>
+<li>让代码保持弹性</li>
+<li>严格按规范编写代码</li>
+<li>设计可扩展的API</li>
+<li>代替旧有的框架、语言(如VB)</li>
+<li>增强用户体验</li>
+<li><p>通常来说对于速度的优化也包含在重构中</p>
+</li>
+<li><p>压缩JS、CSS、image等前端资源(通常是由服务器来解决)</p>
+</li>
+<li>程序的性能优化(如数据读写)</li>
+<li>采用CDN来加速资源加载</li>
+<li>对于JS DOM的优化</li>
+<li>HTTP服务器的文件缓存</li>
 </ul>
-<p><strong>Tips:</strong><br>搭建项目框架：vue-cli<br>脚手架：帮你减少 为减少重复性工作而做的重复性工作 的工具</p>
-<p>比如写gulp脚本本是为了减少重复性工作，但每次写项目都要写gulp脚本，且内容大同小异，而脚手架就是为了减少重复写gulp脚本</p>
-
+</li>
+</ul>
+<p><strong>列举IE与其他浏览器不一样的特性？</strong></p>
+<ul>
+<li>事件不同之处：<ul>
+<li>触发事件的元素被认为是目标（target）。而在 IE 中，目标包含在 event 对象的 srcElement 属性；</li>
+<li>获取字符代码、如果按键代表一个字符（shift、ctrl、alt除外），IE 的 keyCode 会返回字符代码（Unicode），DOM 中按键的代码和字符是分离的，要获取字符代码，需要使用 charCode 属性；</li>
+<li>阻止某个事件的默认行为，IE 中阻止某个事件的默认行为，必须将 returnValue 属性设置为 false，Mozilla 中，需要调用 preventDefault() 方法；</li>
+<li>停止事件冒泡，IE 中阻止事件进一步冒泡，需要设置 cancelBubble 为 true，Mozzilla 中，需要调用 stopPropagation()</li>
+</ul>
+</li>
+</ul>
+<p><strong>什么叫优雅降级和渐进增强？</strong></p>
+<ul>
+<li>优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会针对旧版本的IE进行降级处理了,使之在旧式浏览器上以某种形式降级体验却不至于完全不能用</li>
+<li>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新版本浏览器才支持的功能,向页面增加不影响基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。</li>
+<li>如：默认使用flash上传，但如果浏览器支持 HTML5 的文件上传功能，则使用HTML5实现更好的体验</li>
+</ul>
+<p><strong>是否了解公钥加密和私钥加密</strong></p>
+<ul>
+<li>一般情况下是指私钥用于对数据进行签名，公钥用于对签名进行验证;</li>
+<li>HTTP网站在浏览器端用公钥加密敏感数据，然后在服务器端再用私钥解密</li>
+</ul>
+<p><strong>WEB应用从服务器主动推送Data到客户端有那些方式？</strong></p>
+<ul>
+<li>html5提供的Websocket</li>
+<li>不可见的iframe</li>
+<li>WebSocket通过Flash</li>
+<li>XHR长时间连接</li>
+<li>XHR Multipart Streaming</li>
+<li><script>标签的长时间连接(可跨域)</li>
+</ul>
+<p><strong>对Node的优点和缺点提出了自己的看法？</strong></p>
+<ul>
+<li>（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。</li>
+<li>（缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。</li>
+</ul>
+<p><strong>你有用过哪些前端性能优化的方法？</strong></p>
+<ul>
+<li><p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
+</li>
+<li><p>（2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
+</li>
+<li><p>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
+</li>
+<li><p>（4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
+</li>
+<li><p>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
+</li>
+<li><p>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
+</li>
+<li><p>（7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳</p>
+</li>
+<li>（8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢</li>
+</ul>
+<ul>
+<li>对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘IO。向前端优化指的是，在不影响功能和体验的情况下，能在浏览器执行的不要在服务端执行，能在缓存服务器上直接返回的不要到应用服务器，程序能直接取得的结果不要到外部取得，本机内能取得的数据不要到远程取，内存能取到的不要到磁盘取，缓存中有的不要去数据库查询。减少数据库操作指减少更新次数、缓存结果减少查询次数、将数据库执行的操作尽可能的让你的程序完成（例如join查询），减少磁盘IO指尽量不使用文件系统作为缓存、减少读写文件次数等。程序优化永远要优化慢的部分，换语言是无法“优化”的</li>
+</ul>
+<p><strong>http状态码有那些？分别代表是什么意思？</strong></p>
+<ul>
+<li>100  Continue    继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
+<li>200  OK         正常返回信息</li>
+<li>201  Created      请求成功并且服务器创建了新的资源</li>
+<li>202  Accepted     服务器已接受请求，但尚未处理</li>
+<li>301  Moved Permanently  请求的网页已永久移动到新位置。</li>
+<li>302 Found          临时性重定向。</li>
+<li>303 See Other      临时性重定向，且总是使用 GET 请求新的 URI。</li>
+<li><p>304  Not Modified 自从上次请求后，请求的网页未修改过。</p>
+</li>
+<li><p>400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。</p>
+</li>
+<li>401 Unauthorized 请求未授权。</li>
+<li>403 Forbidden      禁止访问。</li>
+<li><p>404 Not Found      找不到如何与 URI 相匹配的资源。</p>
+</li>
+<li><p>500 Internal Server Error  最常见的服务器端错误。</p>
+</li>
+<li>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）</li>
+</ul>
+<p><strong>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</strong></p>
+<blockquote>
+<p>注：这题胜在区分度高，知识点覆盖广，再不懂的人，也能答出几句，而高手可以根据自己擅长的领域自由发挥，从URL规范、HTTP协议、DNS、CDN、数据库查询、 到浏览器流式解析、CSS规则构建、layout、paint、onload/domready、JS执行、JS API绑定等等</p>
+</blockquote>
+<ul>
+<li>详细版：</li>
+</ul>
+<ul>
+<li>1、浏览器会开启一个线程来处理这个请求，对 URL 分析判断如果是 http 协议就按照 Web 方式来处理;</li>
+<li>2、调用浏览器内核中的对应方法，比如 WebView 中的 loadUrl 方法;</li>
+<li>3、通过DNS解析获取网址的IP地址，设置 UA 等信息发出第二个GET请求;</li>
+<li>4、进行HTTP协议会话，客户端发送报头(请求报头);</li>
+<li>5、进入到web服务器上的 Web Server，如 Apache、Tomcat、Node.JS 等服务器;</li>
+<li>6、进入部署好的后端应用，如 PHP、Java、JavaScript、Python 等，找到对应的请求处理;</li>
+<li>7、处理结束回馈报头，此处如果浏览器访问过，缓存上有对应资源，会与服务器最后修改时间对比，一致则返回304;</li>
+<li>8、浏览器开始下载html文档(响应报头，状态码200)，同时使用缓存;</li>
+<li>9、文档树建立，根据标记请求所需指定MIME类型的文件（比如css、js）,同时设置了cookie;</li>
+<li><p>10、页面开始渲染DOM，JS根据DOM API操作DOM,执行事件绑定等，页面显示完成。</p>
+</li>
+<li><p>简洁版：</p>
+<ul>
+<li>浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</li>
+<li>服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；</li>
+<li>浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；</li>
+<li>载入解析到的资源文件，渲染页面，完成</li>
+</ul>
+</li>
+</ul>
+<p><strong>你用的得心应手用的熟练地编辑器&amp;开发环境是什么样子？</strong></p>
+<ul>
+<li>Sublime Text 3 + 相关插件编写前端代码</li>
+<li>Google chrome 、Mozilla Firefox浏览器 +firebug - 兼容测试和预览页面UI、动画效果和交互功能</li>
+<li>Node.js+Gulp</li>
+<li>git 用于版本控制和Code Review</li>
+</ul>
+<p><strong>对前端工程师这个职位是怎么样理解的？它的前景会怎么样？</strong></p>
+<ul>
+<li><p>前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。  </p>
+<ul>
+<li>1、实现界面交互</li>
+<li>2、提升用户体验</li>
+<li>3、有了Node.js，前端可以实现服务端的一些事情</li>
+</ul>
+</li>
+<li><p>前端是最贴近用户的程序员，前端的能力就是能让产品从 90分进化到 100 分，甚至更好</p>
+</li>
+<li>参与项目，快速高质量完成实现效果图，精确到1px；</li>
+<li>与团队成员，UI设计，产品经理的沟通</li>
+<li>做好的页面结构，页面重构和用户体验</li>
+<li>处理hack，兼容、写出优美的代码格式</li>
+<li>针对服务器的优化、拥抱最新前端技术</li>
+</ul>
+<p><strong>平时如何管理你的项目？</strong></p>
+<ul>
+<li><p>先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；</p>
+</li>
+<li><p>编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；</p>
+</li>
+<li><p>标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；</p>
+</li>
+<li><p>页面进行标注（例如 页面 模块 开始和结束）；</p>
+</li>
+<li><p>CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；</p>
+</li>
+<li><p>JS 分文件夹存放 命名以该JS功能为准的英文翻译。</p>
+</li>
+<li><p>图片采用整合的 images.png png8 格式文件使用 - 尽量整合在一起使用方便将来的管理</p>
+</li>
+</ul>
+<p><strong>说说最近最流行的一些东西吧？常去哪些网站？</strong></p>
+<ul>
+<li>ES6\WebAssembly\Node\MVVM\Web Components\React\React Native\Webpack 组件化</li>
+</ul>
+<p><strong>移动端（Android IOS）怎么做好用户体验?</strong></p>
+<ul>
+<li>清晰的视觉纵线、</li>
+<li>信息的分组、极致的减法、</li>
+<li>利用选择代替输入、</li>
+<li>标签及文字的排布方式、</li>
+<li>依靠明文确认密码、</li>
+<li>合理的键盘利用、</li>
+</ul>
+</script></li></ul>
       
     </div>
     
@@ -357,13 +504,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/06/conclusion(四)/">conclusion（四）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-09, 23:43:00</p>
-        <p><span>最后更新:</span>2018-06-11, 22:53:06</p>
+        <p><span>发布时间:</span>2018-07-06, 21:40:00</p>
+        <p><span>最后更新:</span>2018-07-08, 00:13:55</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/09/vue实现饿了么外卖系统/" title="vue实现饿了么外卖系统（完整开发流程）">http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/06/conclusion(四)/" title="conclusion（四）">http://www.mandywu.xyz/2018/07/06/conclusion(四)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/06/conclusion(四)/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -376,15 +523,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">
-                    eleme项目框架搭建及eslint语法常见报错
+                <a href="/2018/07/06/conclusion(一)/">
+                    conclusion（一）
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">
-                    css样式表里面引用background-image时，url路径错误原因及解决方法
+                <a href="/2018/07/06/conclusion（三）/">
+                    conclusion（三）
                 </a>
             </div>
         
@@ -396,7 +543,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识内容"><span class="toc-number">2.</span> <span class="toc-text">涉及知识内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学到什么"><span class="toc-number">3.</span> <span class="toc-text">学到什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何做技术选型"><span class="toc-number">4.</span> <span class="toc-text">如何做技术选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue核心思想"><span class="toc-number">5.</span> <span class="toc-text">vue核心思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在公司中能够开发一个项目"><span class="toc-number">6.</span> <span class="toc-text">如何在公司中能够开发一个项目</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他问题"><span class="toc-number">1.</span> <span class="toc-text">其他问题</span></a></li></ol>
         
     </div>
     <style>
@@ -432,7 +579,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"vue实现饿了么外卖系统（完整开发流程）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"conclusion（四）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -451,8 +598,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/';
-            this.page.identifier = '2018/06/09/vue实现饿了么外卖系统/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/06/conclusion(四)/';
+            this.page.identifier = '2018/07/06/conclusion(四)/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -474,7 +621,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/" title="上一篇: eleme项目框架搭建及eslint语法常见报错">
+            <a href="/2018/07/06/conclusion(一)/" title="上一篇: conclusion（一）">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -482,7 +629,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="下一篇: css样式表里面引用background-image时，url路径错误原因及解决方法">
+            <a href="/2018/07/06/conclusion（三）/" title="下一篇: conclusion（三）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
