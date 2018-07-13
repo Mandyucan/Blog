@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-Hans en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Mandy" />
+
+
+
+<meta name="description" content="只有满足同源的脚本才可以获取资源，这样确实保证了网络上的安全性，但是限制了资源之间的互相利用，比如ajax，ajax是通过url来获取数据，同样也会受到同源策略的限制...">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域与jsonp">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/13/跨域与jsonp/index.html">
+<meta property="og:site_name" content="mandy&#39;blog">
+<meta property="og:description" content="只有满足同源的脚本才可以获取资源，这样确实保证了网络上的安全性，但是限制了资源之间的互相利用，比如ajax，ajax是通过url来获取数据，同样也会受到同源策略的限制...">
+<meta property="og:locale" content="zh-Hans en">
+<meta property="og:updated_time" content="2018-07-13T13:04:06.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域与jsonp">
+<meta name="twitter:description" content="只有满足同源的脚本才可以获取资源，这样确实保证了网络上的安全性，但是限制了资源之间的互相利用，比如ajax，ajax是通过url来获取数据，同样也会受到同源策略的限制...">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="mandy&#39;blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>跨域与jsonp | mandy&#39;blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Mandy</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/随笔/">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:mandyucan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Mandyucan" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" href="https://blog.csdn.net/Mandyucan" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub-blog/">gitHub - blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resume/">resume</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化-javascript/">性能优化 javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱前端 专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Mandy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Mandy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/随笔/">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:mandyucan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Mandyucan" title="GitHub"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/Mandyucan" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-跨域与jsonp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/13/跨域与jsonp/" class="article-date">
+      <time datetime="2018-07-13T13:03:00.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域与jsonp
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>只有满足同源的脚本才可以获取资源，这样确实保证了网络上的安全性，但是限制了资源之间的互相利用，比如ajax，ajax是通过url来获取数据，同样也会受到同源策略的限制。</p>
+<h2 id="解决跨域问题的方法"><a href="#解决跨域问题的方法" class="headerlink" title="解决跨域问题的方法"></a>解决跨域问题的方法</h2><ol>
+<li>flash。很久之前的方法，目前基本弃用；</li>
+<li>服务器代理中转。服务器不会受到同源策略的限制。</li>
+<li>iframe+document.domain。这种方法只能针对主域名相同的子域之间。</li>
+<li>iframe+location.hash。</li>
+<li>iframe+window.name。</li>
+<li><strong>HTML5 postMessage方法。</strong></li>
+<li><strong>jsonp</strong>。这个是现在主要使用的。</li>
+</ol>
+<h2 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain+iframe"></a>document.domain+iframe</h2><p><strong>只有在主域相同而子域不同的情况下这种方式才可以使用。</strong></p>
+<p><strong>子域：</strong><br>以百度为例，百度的主网页是<a href="http://www.baidu.com，而下面还有很多像zhidao.baidu.com、news.baidu.com等，这些都可称为www.baidu.com这个主域下的子域。" target="_blank" rel="noopener">www.baidu.com，而下面还有很多像zhidao.baidu.com、news.baidu.com等，这些都可称为www.baidu.com这个主域下的子域。</a></p>
+<p><strong>具体做法：</strong><br>具体的做法是：在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上document.domain=”a.com”，然后通过a.html创建一个iframe，然后去控制iframe的contentDocument，这样两个js文件之间就可以“交互”了。" target="_blank" rel="noopener">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上document.domain=”a.com”，然后通过a.html创建一个iframe，然后去控制iframe的contentDocument，这样两个js文件之间就可以“交互”了。</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> // a.html</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	document.domain = &apos;a.com&apos;;</span><br><span class="line">	var ifr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">	ifr.src = &apos;http://script.a.com/b.html&apos;;</span><br><span class="line">	ifr.style.display = &apos;none&apos;;</span><br><span class="line">	document.body.appendChild(ifr);</span><br><span class="line">	ifr.onload = function()&#123;</span><br><span class="line">	    var doc = ifr.contentDocument || ifr.contentWindow.document;</span><br><span class="line">	    // 在这里操纵b.html</span><br><span class="line">	    alert(doc.getElementsByTagName(&quot;h1&quot;)[0].childNodes[0].nodeValue);</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> // b.html</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	document.domain = &apos;a.com&apos;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>备注</strong>：页面的domain默认等于window.location.hostname。主域名是不带有www的域名，例如baidu.com，doamin只能设置为主域名。</p>
+<p><strong>缺点</strong></p>
+<ol>
+<li>安全性。当一个站点被攻击后，另一个站点就会引起安全漏洞。</li>
+<li>操作繁琐。如果一个页面中引入多个iframe，要想能够操作所有的iframe，必须都得设置相同的domain。</li>
+</ol>
+<h2 id="iframe-location-hash"><a href="#iframe-location-hash" class="headerlink" title="iframe+location.hash"></a>iframe+location.hash</h2><p><strong>原理</strong><br>利用location.hash来进行传值。在一个url：<a href="http://www.baidu.com#hello;其中的#hello就是通过location.hash来设置的，改变hash值并不会导致页面刷新，所以可以利用hash值来进行数据传递，当然，这个东西既然放到了url里面，自然就会有**长度的限制。*" target="_blank" rel="noopener">http://www.baidu.com#hello;其中的#hello就是通过location.hash来设置的，改变hash值并不会导致页面刷新，所以可以利用hash值来进行数据传递，当然，这个东西既然放到了url里面，自然就会有**长度的限制。*</a>*</p>
+<p>假设域名a.com下的文件demo1.html要和b.com下的demo2之间传递信息，demo1.thml首先要自动创建一个隐藏的iframe，iframe的src指向b.com下的这个demo2.html网页，这个时候，hash值就可以作为参数传递了。</p>
+<p>demo2.html响应请求之后，通过修改demo1.html的hash值来传递数据。</p>
+<p><strong>需要注意</strong>：当两个页面不在同一个域名下的时候，IE、chrome不允许修改parent.location.hash的值，所以要借助a.com域名下的一个代理iframe。Firefox中可以修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> // demo1.html</span><br><span class="line">&lt;button id=&quot;btn&quot;&gt;Click me to get message&lt;/button&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var btn = document.getElementById(&apos;btn&apos;),</span><br><span class="line">		ifr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">	ifr.src = &apos;http://localhost/2.html&apos;;</span><br><span class="line">	btn.onclick = function() &#123;</span><br><span class="line">		 location.hash &amp;&amp; console.log(location.hash);</span><br><span class="line">	&#125;;</span><br><span class="line">	document.body.appendChild(ifr);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> // demo2.html</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	try &#123;</span><br><span class="line">		parent.location.hash = &apos;hello?&apos;;</span><br><span class="line">	&#125;catch (e) &#123;</span><br><span class="line">		// ie、chrome的安全机制无法修改parent.location.hash，</span><br><span class="line">    	       // 所以要利用一个中间的和1.html同域下的代理iframe</span><br><span class="line">               location.hash = &quot;helllo?&quot;;</span><br><span class="line">    	       var tempIfr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">         	tempIfr.style.display = &apos;none&apos;;</span><br><span class="line">        	tempIfr.src = &quot;temp.html&quot;;</span><br><span class="line">    	        document.body.appendChild(tempIfr);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> // temp.html 可在本地服务器模拟</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	//这里的parent是2.html，也就是我们要传递数据的页面</span><br><span class="line">	//parent.parent是主页面</span><br><span class="line">	parent.parent.location.hash = parent.location.hash;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>缺点：</strong><br>数据直接暴露在url中，数据的长度和类型都有限制。</p>
+<h2 id="iframe-window-name"><a href="#iframe-window-name" class="headerlink" title="iframe+window.name"></a>iframe+window.name</h2><p><strong>原理：</strong><br>与location.hash方法差不多，也是主页面有一个iframe，然后通过修改子页面的window.name来让主页面获取到这个值。</p>
+<p><strong>需要三个页面</strong><br>1.htmll 主页面；</p>
+<p>temp.html 代理页面，通常没有任何html内容，要和主页面在同一个域名下；</p>
+<p>2.html 数据页面；</p>
+<p>在主页面1.html下创建一个iframe，把它的src指向数据页面2.thml，数据页面会把数据附加到这个iframe的window.name上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> // 1.html主页面</span><br><span class="line">&lt;button id=&quot;btn&quot;&gt;Click me to get message&lt;/button&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var btn = document.getElementById(&apos;btn&apos;),</span><br><span class="line">		hasGetData = false;</span><br><span class="line">		ifr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">	ifr.src = &apos;http://localhost/2.html&apos;;</span><br><span class="line">	btn.onclick = function() &#123;</span><br><span class="line">		if (hasGetData) &#123;</span><br><span class="line">			console.log(ifr.contentWindow.name);</span><br><span class="line">			document.body.removeChild(ifr);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			ifr.contentWindow.location = &apos;http://localhost/temp.html&apos;;</span><br><span class="line">			hasGetData = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	document.body.appendChild(ifr);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 2.html</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	window.name = &apos;hello!&apos;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>在主页面中，最开始让iframe的src指向了2.html这个页面，获取了它里面的window.name的值，但是这个时候如果在真的服务器上的话，因为域名不同所以无法直接传值。</p>
+<p>当第一次点击了按钮之后，把iframe的locatin值换成了和1.html同域名的temp.html，这两个同域名的网页之间可以互相访问，而且此时我们也没有改变刚才的name的值，这样就把两个不同域名的数据通过一个中间页面的形式传递过来了。</p>
+<p>获取数据以后销毁这个iframe，释放内容，同时保证安全性。</p>
+<p><strong>总结</strong>：利用iframe的src属性实现让外域转向本地域，这样数据就由iframe的window.name从外域传递到了本地域。这样既巧妙地绕过了浏览器的跨域问题，又能保证安全性。</p>
+<p><strong>缺点：</strong>通信的数据量很小。</p>
+<h2 id="HTML5-postMessage方法"><a href="#HTML5-postMessage方法" class="headerlink" title="HTML5 postMessage方法"></a>HTML5 postMessage方法</h2><p>H5中有一个功能就是<strong>跨文档消息传输</strong>。主流浏览器的较高版本包括IE8和IE8以上都实现了这个功能。而且facebook已经使用了这个功能，用postMessage支持web的实时消息传递。</p>
+<p><code>getMessageHTML.postMessage(message, targetOrigin)</code>;</p>
+<p>其中<code>getMessageHTML</code>是我们对于要接受信息的页面的引用，可以是iframe的contentWindow属性、window.open的返回值、通过name或下标从window.frames取到的值。</p>
+<p><code>message</code>是我们所要发送的信息，字符串类型。</p>
+<p><code>targetOrigin</code>是用于限制<code>getMessageHTML</code>的，当填“*”的时候是不做限制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> // 1.html</span><br><span class="line">&lt;iframe id=&quot;ifr&quot; src=&quot;2.html&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;button id=&quot;btn&quot;&gt;Click me to change color&lt;/button&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line">btn.onclick = function() &#123;</span><br><span class="line">      var ifr = document.getElementById(&apos;ifr&apos;);</span><br><span class="line">      ifr.contentWindow.postMessage(&apos;black&apos;, &apos;*&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> // 2.html</span><br><span class="line">&lt;div id=&quot;div&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var div = document.getElementById(&apos;div&apos;);</span><br><span class="line">    window.addEventListener(&apos;message&apos;, function(event)&#123;</span><br><span class="line">        div.style.backgroundColor = event.data;</span><br><span class="line">    &#125;, false);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>点击click按钮之后，iframe中那个红色的方块就会变成黑色，这样就完成了一个最基本的实时通信功能。不过这里注意本来的2.html里面的那个div的颜色并没有改变。</p>
+<h2 id="服务器代理中转"><a href="#服务器代理中转" class="headerlink" title="服务器代理中转"></a>服务器代理中转</h2><p>因为服务器不受同源策略的限制，所以只要把资源全部放到自己的服务器上，然后让这个服务器上的网页获取这些资源就可以了。</p>
+<h2 id="重点：jsonp"><a href="#重点：jsonp" class="headerlink" title="重点：jsonp"></a>重点：jsonp</h2><p><strong>原理</strong>：web页面上script引入js文件不受跨域的影响，不仅如此，凡是有src属性的标签都不受同源策略的影响。</p>
+<p>通过这个特性，可以把资源直接放到script标签的src里面，这样就把数据放到了服务器上，并且是使用json的形式。（js可以轻松操作json数据）</p>
+<p>但是由于无法监控script的src的加载状态，不知道数据有没有获取完成，所以要事先定义好处理函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	function success (data) &#123;</span><br><span class="line">		console.log(data.name + &apos; &apos; + data.age);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在数据里面开头写上这个函数名，引入进来之后等到文件全部加载完毕，刚好就是调用已经定义好的函数，并且参数就是后面的那一串数据。</p>
+<p>在这之前，先创建一个txt文件，里面写上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// txt 文件</span><br><span class="line">success(&#123;“name”: “Mandy”, “age”: 18&#125;)</span><br></pre></td></tr></table></figure>
+<p>然后在html文件中写上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	function success (data) &#123;</span><br><span class="line">		console.log(data.name + &apos; &apos; + data.age);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./test.txt&quot;&gt;&lt;/script&gt;</span><br><span class="line">// 最后打印Mandy 18</span><br></pre></td></tr></table></figure>
+<p>在实际开发中，script标签的src属性的格式是“url+参数”的形式，比如“url?cb=doJSON”，<strong>这里的cb是和后台人员协商好的类似形参的东西，是一个留给我们写处理函数的接口，后面的doJSON就是我们事先定义好的处理函数。</strong></p>
+<h2 id="模拟百度搜索栏"><a href="#模拟百度搜索栏" class="headerlink" title="模拟百度搜索栏"></a>模拟百度搜索栏</h2><p>检测百度网页的资源文件，发现当在输入栏中输入文字的时候，下面出来的那些关键字信息都是存放在<a href="http://suggestion.baidu.com/su?wd=输入值&amp;cb=处理函数，这个url里面的，而且主要是在这个对象里面的s属性上。" target="_blank" rel="noopener">http://suggestion.baidu.com/su?wd=输入值&amp;cb=处理函数，这个url里面的，而且主要是在这个对象里面的s属性上。</a></p>
+<p>所以我们可以直接在input标签的keyup上面绑定这样一个事件：</p>
+<p>在input标签的keyup上面绑定事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">window.onload = function()&#123;</span><br><span class="line">	var $Input = document.getElementById(&apos;q&apos;);</span><br><span class="line">	var $Ul = document.getElementById(&apos;ul1&apos;);</span><br><span class="line">	$Input.onkeyup = function()&#123;</span><br><span class="line">		if(this.value != &apos;&apos;)&#123;</span><br><span class="line">			var $Script = document.createElement(&apos;script&apos;);</span><br><span class="line">			$Script.src = &apos;http://suggestion.baidu.com/su?wd=&apos; + this.value + &apos;&amp;cb=doJSON&apos;;</span><br><span class="line">			document.body.appendChild($Script);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			$Ul.style.display = &apos;none&apos;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>处理函数：<br>点击每一个显示出来的关键字信息的时候，都会跳转到一个新页面，而这些新页面的链接都是<a href="https://www.baidu.com/s?wd=刚才的输出值出来的对象的s属性的值，因此处理函数可以写成：" target="_blank" rel="noopener">https://www.baidu.com/s?wd=刚才的输出值出来的对象的s属性的值，因此处理函数可以写成：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">function doJSON(data)&#123;</span><br><span class="line">	var $Ul = document.getElementById(&apos;ul&apos;);</span><br><span class="line">	var html = &apos;&apos;;</span><br><span class="line">	if (data.s.length)&#123;</span><br><span class="line">		$Ul.style.display = &apos;block&apos;;</span><br><span class="line">		for(var i = 0; i &lt; data.s.length; i++)&#123;</span><br><span class="line">			html += &apos;&lt;li&gt;&lt;a href=&quot;https://www.baidu.com/s?wd=&apos; + data.s[i] + &apos;&quot; target=&quot;_blank&quot;&gt;&apos; + data.s[i] + &apos;&lt;/a&gt;&lt;/li&gt;&apos;</span><br><span class="line">                &#125; </span><br><span class="line">               $Ul.innerHTML = html; </span><br><span class="line">        &#125;else&#123; </span><br><span class="line">               $Ul.style.display = &apos;none&apos;; </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个简陋的百度搜索栏就完成了。</p>
+<p>本文内容转自<a href="http://www.flyingliu.com/?p=312" target="_blank" rel="noopener">http://www.flyingliu.com/?p=312</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/13/跨域与jsonp/">跨域与jsonp</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
+        <p><span>发布时间:</span>2018-07-13, 21:03:00</p>
+        <p><span>最后更新:</span>2018-07-13, 21:04:06</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/13/跨域与jsonp/" title="跨域与jsonp">http://www.mandywu.xyz/2018/07/13/跨域与jsonp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/13/跨域与jsonp/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/07/10/JS运行机制整理/">
+                    JS运行机制整理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同源策略"><span class="toc-number">1.</span> <span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决跨域问题的方法"><span class="toc-number">2.</span> <span class="toc-text">解决跨域问题的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain-iframe"><span class="toc-number">3.</span> <span class="toc-text">document.domain+iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe-location-hash"><span class="toc-number">4.</span> <span class="toc-text">iframe+location.hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe-window-name"><span class="toc-number">5.</span> <span class="toc-text">iframe+window.name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5-postMessage方法"><span class="toc-number">6.</span> <span class="toc-text">HTML5 postMessage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器代理中转"><span class="toc-number">7.</span> <span class="toc-text">服务器代理中转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重点：jsonp"><span class="toc-number">8.</span> <span class="toc-text">重点：jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟百度搜索栏"><span class="toc-number">9.</span> <span class="toc-text">模拟百度搜索栏</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"跨域与jsonp　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://www.mandywu.xyz/2018/07/13/跨域与jsonp/';
+            this.page.identifier = '2018/07/13/跨域与jsonp/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/07/10/JS运行机制整理/" title="下一篇: JS运行机制整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/13/跨域与jsonp/">跨域与jsonp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/10/JS运行机制整理/">JS运行机制整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion (一)/">conclusion（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion (二)/">conclusion（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion (四)/">conclusion（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/conclusion (三)/">conclusion（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/cross-domain/">cross-domain</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/水平居中的几种方式/">水平居中的几种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/SEO/">前端需要注意哪些SEO</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/03/localstorage-session-cookie/">performance-optimization</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-jQuery/">jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/01/FE-Interview-Questions-HTTP/">HTTP + TCP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/原生ajax封装/">原生ajax封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/根据resume做出的总结/">Html + Css + Js</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/gulp配置/">gulp配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/22/关于字符串拼接与文档碎片（性能优化）/">关于字符串拼接与文档碎片（性能优化）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">eleme项目框架搭建及eslint语法常见报错</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">css样式表里面引用background-image时，url路径错误原因及解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/29/git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）/">git建立本地仓库并上传代码到gitHub 及常见问题解决（更新）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/用yarn代替npm作为node.js的模块管理器/">用yarn代替npm作为node.js的模块管理器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Hexo快速发布博文及插入图片/">Hexo快速发布博文及插入图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Markdown-简要语法/">Markdown 简要语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/21/利用gitHub-Hexo搭建个人博客/">利用gitHub+Hexo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/article-title/">article title</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 Mandy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
