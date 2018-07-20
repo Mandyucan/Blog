@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
-<meta name="keywords" content="vue">
+<meta name="description" content="小程序scroll-view中的bindscrolltolower方法失效的原因是， 为这个scroll-view以及page的高度都设置为100vh; 需要在app.wxss中设置 123page&amp;#123;    height：100vh&amp;#125; 并且在有scroll-view的view中设置height：100vh 即可、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue实现饿了么外卖系统（完整开发流程）">
-<meta property="og:url" content="http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/index.html">
+<meta property="og:title" content="mandy&#39;blog">
+<meta property="og:url" content="http://www.mandywu.xyz/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/index.html">
 <meta property="og:site_name" content="mandy&#39;blog">
-<meta property="og:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
+<meta property="og:description" content="小程序scroll-view中的bindscrolltolower方法失效的原因是， 为这个scroll-view以及page的高度都设置为100vh; 需要在app.wxss中设置 123page&amp;#123;    height：100vh&amp;#125; 并且在有scroll-view的view中设置height：100vh 即可、">
 <meta property="og:locale" content="zh-Hans en">
-<meta property="og:updated_time" content="2018-06-11T14:53:06.964Z">
+<meta property="og:updated_time" content="2018-07-20T15:20:52.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue实现饿了么外卖系统（完整开发流程）">
-<meta name="twitter:description" content="目标： 1.掌握vue.js项目在实战中的用 2.学会使用vue.js 3.组件化、模块化的开发方式 涉及知识内容： 1.vue-cli 2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios 3.webpack构建工具 4.mock.ls模拟数据 5.es6 eslint代码风格工具（看个人需求，也可以用es5写）...">
+<meta name="twitter:title" content="mandy&#39;blog">
+<meta name="twitter:description" content="小程序scroll-view中的bindscrolltolower方法失效的原因是， 为这个scroll-view以及page的高度都设置为100vh; 需要在app.wxss中设置 123page&amp;#123;    height：100vh&amp;#125; 并且在有scroll-view的view中设置height：100vh 即可、">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>vue实现饿了么外卖系统（完整开发流程） | mandy&#39;blog</title>
+<title>mandy&#39;blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -267,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-vue实现饿了么外卖系统" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/06/09/vue实现饿了么外卖系统/" class="article-date">
-      <time datetime="2018-06-09T15:43:00.000Z" itemprop="datePublished">2018-06-09</time>
+      <a href="/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/" class="article-date">
+      <time datetime="2018-07-20T15:20:51.002Z" itemprop="datePublished">2018-07-20</time>
 </a>
 
 
@@ -282,73 +281,15 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      vue实现饿了么外卖系统（完整开发流程）
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>1.掌握vue.js项目在实战中的用<br>2.学会使用vue.js<br>3.组件化、模块化的开发方式</p>
-<h2 id="涉及知识内容"><a href="#涉及知识内容" class="headerlink" title="涉及知识内容"></a>涉及知识内容</h2><p>1.vue-cli<br>2.axiox  ajax通信、vue-resource(更新后不支持)  推荐axios<br>3.webpack构建工具<br>4.mock.ls模拟数据<br>5.es6 eslint代码风格工具（看个人需求，也可以用es5写）</p>
-<h2 id="学到什么"><a href="#学到什么" class="headerlink" title="学到什么"></a>学到什么</h2><ol>
-<li>标准开发流程，做事的方式</li>
-<li>工程化、组件化、模块化的思想</li>
-<li>移动端开发常用小技巧</li>
-<li>flex弹性布局</li>
-<li>交互设计</li>
-</ol>
-<h2 id="如何做技术选型"><a href="#如何做技术选型" class="headerlink" title="如何做技术选型"></a>如何做技术选型</h2><p><strong>多方面因素：</strong><br>一、技术方面：</p>
-<p>1.社区（是否成熟/活跃）、有问题可以找到解决方案;<br>2.开源框架的其他方面（文档更新是及时、框架轻量级）</p>
-<p>二、人才方面：</p>
-<ol>
-<li>对于新技术，开发人员上手成本<br> <strong>vue</strong>: 上手成本低，语法清晰，template模板，借鉴react虚拟dom思想、angular设计模式，数据绑定，且对细腻dom进行了优化<br> <strong>react</strong>：有自己及独特的语法==》jss语法，将html、css都写到js里面，学习成本相对较大<br> <strong>angular</strong>：后端人员写出的，借鉴后端的思想。需要懂后台语言。</li>
-</ol>
-<p>2.团队技术积累：<br>    如果团队其他人员都在用传统的开发工具,,你却用新框架，出现问题后没有其他人不能一起解决，新技术可以用，但是不能耽误最后发版影响进度。</p>
-<blockquote>
-<p>对于公司来说，上线的项目使用的技术不一定要最新最潮，但一定是最稳当的</p>
-</blockquote>
-<h2 id="vue核心思想"><a href="#vue核心思想" class="headerlink" title="vue核心思想"></a>vue核心思想</h2><p>1.数据驱动： 写vue时，一定不要有操作dom的代码出现，dom的渲染、显示、隐藏，均由数据的状态控制；<br>2.组件化：扩展html元素，封装可重复用的一个代码，和之前写的弹窗组件。翻页组件等类似</p>
-<h2 id="如何在公司中能够开发一个项目"><a href="#如何在公司中能够开发一个项目" class="headerlink" title="如何在公司中能够开发一个项目"></a>如何在公司中能够开发一个项目</h2><ul>
-<li><strong>产品给出需求文档，产品原型</strong></li>
-<li>阅读文档，梳理需求</li>
-<li>评审需求（产品逻辑、交互是否合理）</li>
-<li>UI出图，交互设计稿</li>
-<li><strong>开始做详细设计（拆分需求模块，技术选型，调研技术方案中的不确定（用什么语言，什么框架等，demo验证））</strong></li>
-<li>详细设计评审（开会决定设计是否可行）</li>
-<li>出项目排期（做详细设计时已基本预估出时间安排，所以做详细设计是很重要的）</li>
-<li>进入开发</li>
-<li>搭建项目框架</li>
-<li>模拟mock数据（mock.js模拟数据）</li>
-<li>实现页面</li>
-<li>自测（自己检测bug。逻辑等）</li>
-<li>联调（和后端人员调试）        </li>
-<li>过冒烟case（测试写的一个测试用例，自己先测试逻辑是否通顺，不通过则退回）</li>
-<li>提交测试代码，部署测试环境，测试人员接入测试</li>
-<li>改bug</li>
-<li>部署上线</li>
-<li>验证        </li>
-</ul>
-<p><strong>Tips:</strong><br>搭建项目框架：vue-cli<br>脚手架：帮你减少 为减少重复性工作而做的重复性工作 的工具</p>
-<p>比如写gulp脚本本是为了减少重复性工作，但每次写项目都要写gulp脚本，且内容大同小异，而脚手架就是为了减少重复写gulp脚本</p>
+        <p>小程序scroll-view中的bindscrolltolower方法失效的原因是，</p>
+<p>为这个scroll-view以及page的高度都设置为100vh;</p>
+<p>需要在<code>app.wxss</code>中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page&#123;</span><br><span class="line">    height：100vh</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并且在有<code>scroll-view</code>的<code>view</code>中设置<code>height：100vh</code></p>
+<p>即可、</p>
 
       
     </div>
@@ -357,13 +298,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/06/09/vue实现饿了么外卖系统/">vue实现饿了么外卖系统（完整开发流程）</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mandy</a></p>
-        <p><span>发布时间:</span>2018-06-09, 23:43:00</p>
-        <p><span>最后更新:</span>2018-06-11, 22:53:06</p>
+        <p><span>发布时间:</span>2018-07-20, 23:20:51</p>
+        <p><span>最后更新:</span>2018-07-20, 23:20:52</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/06/09/vue实现饿了么外卖系统/" title="vue实现饿了么外卖系统（完整开发流程）">http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/" title="">http://www.mandywu.xyz/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.mandywu.xyz/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/　　作者: Mandy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -375,16 +316,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/">
-                    eleme项目框架搭建及eslint语法常见报错
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/">
-                    css样式表里面引用background-image时，url路径错误原因及解决方法
+                <a href="/2018/07/13/跨域与jsonp/">
+                    跨域与jsonp
                 </a>
             </div>
         
@@ -396,7 +331,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涉及知识内容"><span class="toc-number">2.</span> <span class="toc-text">涉及知识内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学到什么"><span class="toc-number">3.</span> <span class="toc-text">学到什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何做技术选型"><span class="toc-number">4.</span> <span class="toc-text">如何做技术选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue核心思想"><span class="toc-number">5.</span> <span class="toc-text">vue核心思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在公司中能够开发一个项目"><span class="toc-number">6.</span> <span class="toc-text">如何在公司中能够开发一个项目</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -432,7 +367,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"vue实现饿了么外卖系统（完整开发流程）　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| mandy'blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -451,8 +386,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.mandywu.xyz/2018/06/09/vue实现饿了么外卖系统/';
-            this.page.identifier = '2018/06/09/vue实现饿了么外卖系统/';
+            this.page.url = 'http://www.mandywu.xyz/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/';
+            this.page.identifier = '2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -474,15 +409,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/06/11/eleme项目框架搭建及eslint语法常见报错/" title="上一篇: eleme项目框架搭建及eslint语法常见报错">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/06/04/css样式表里面引用background-image时，url路径错误原因及解决方法/" title="下一篇: css样式表里面引用background-image时，url路径错误原因及解决方法">
+            <a href="/2018/07/13/跨域与jsonp/" title="下一篇: 跨域与jsonp">
                 <i class="fa fa-angle-right"></i>
             </a>
         

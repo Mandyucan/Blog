@@ -272,6 +272,65 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/" class="article-date">
+      <time datetime="2018-07-20T15:20:51.002Z" itemprop="datePublished">2018-07-20</time>
+</a>
+
+ 
+    <a href="/2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/07/20/解决微信小程序组件scroll-view中bindscrolltolower事件触发不了的问题/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>小程序scroll-view中的bindscrolltolower方法失效的原因是，</p>
+<p>为这个scroll-view以及page的高度都设置为100vh;</p>
+<p>需要在<code>app.wxss</code>中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page&#123;</span><br><span class="line">    height：100vh</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并且在有<code>scroll-view</code>的<code>view</code>中设置<code>height：100vh</code></p>
+<p>即可、</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-跨域与jsonp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -418,79 +477,6 @@
 
 
   
-    <article id="post-conclusion (一)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/06/conclusion (一)/" class="article-date">
-      <time datetime="2018-07-06T13:40:00.000Z" itemprop="datePublished">2018-07-06</time>
-</a>
-
- 
-    <a href="/2018/07/06/conclusion (一)/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2018/07/06/conclusion (一)/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/06/conclusion (一)/">conclusion（一）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              front-end知识点总结...
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/07/06/conclusion (一)/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-conclusion (二)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -546,6 +532,79 @@
       
         <p class="article-more-link">
           <a href="/2018/07/06/conclusion (二)/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-conclusion (三)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/06/conclusion (三)/" class="article-date">
+      <time datetime="2018-07-06T13:40:00.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+
+ 
+    <a href="/2018/07/06/conclusion (三)/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/07/06/conclusion (三)/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/06/conclusion (三)/">conclusion（三）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              front-end知识点总结...
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/07/06/conclusion (三)/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -637,20 +696,20 @@
 
 
   
-    <article id="post-conclusion (三)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-conclusion (一)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/06/conclusion (三)/" class="article-date">
+      <a href="/2018/07/06/conclusion (一)/" class="article-date">
       <time datetime="2018-07-06T13:40:00.000Z" itemprop="datePublished">2018-07-06</time>
 </a>
 
  
-    <a href="/2018/07/06/conclusion (三)/#comments" title="查看评论">
+    <a href="/2018/07/06/conclusion (一)/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2018/07/06/conclusion (三)/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2018/07/06/conclusion (一)/"></span>
         
     </a>
 
@@ -665,7 +724,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/06/conclusion (三)/">conclusion（三）</a>
+      <a class="article-title" href="/2018/07/06/conclusion (一)/">conclusion（一）</a>
     </h1>
   
 
@@ -691,7 +750,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2018/07/06/conclusion (三)/#more">more >></a>
+          <a href="/2018/07/06/conclusion (一)/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -911,79 +970,6 @@
       
         <p class="article-more-link">
           <a href="/2018/07/04/SEO/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-localstorage-session-cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/03/localstorage-session-cookie/" class="article-date">
-      <time datetime="2018-07-03T15:13:00.000Z" itemprop="datePublished">2018-07-03</time>
-</a>
-
- 
-    <a href="/2018/07/03/localstorage-session-cookie/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2018/07/03/localstorage-session-cookie/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/03/localstorage-session-cookie/">performance-optimization</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              如何进行网站性能优化，content方面减少HTTP请求：合并文件、CSS精灵、inline Image，减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询...
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/">resume</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/07/03/localstorage-session-cookie/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
